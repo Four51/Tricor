@@ -1,20 +1,36 @@
-<footer class="container copyright-view">
-    <div class="col-md-4 col-md-offset-1 col-md-push-7">
+<footer class="container copyright-view" ng-hide="isInPath('cart') || isInPath('admin') || isInPath('checkout')">
+    <div class="col-md-1">
         <div class="row">
-            <p class="text-center">
-                <a href="http://public.four51.com/help-information/" target="_blank">
-                    <i class="fa fa-cloud"></i><br />
-                    <strong>{{'Powered by' | xlat}} Four51°</strong>
-                </a>
-            </p>
-            <p class="text-center">
-                {{'Copyright' | xlat}} © {{year}}<br /> Four51 Inc. <br>{{'All Rights Reserved' | xlat}}.<br />
-                <span ng-if="!(user.Permissions.contains('HideTerms'))">
-                    <a class="btn btn-default btn-sm" href="conditions">
-                        {{'Conditions of Use' | xlat}}
-                    </a>
-                </span>
-            </p>
+            <h5>
+            <p><i class="fa fa-map-marker"></i> Address:</p>
+                <br>
+            <p><i class="fa fa-phone"></i> Phone:</p>
+            <p><i class="fa fa-envelope"></i> Email:</p>
+            </h5>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="row">
+            <h5>
+                <p>
+                    308 SW 2nd Ave, 5th Floor
+                    <br>
+                    Portland, OR 97204 USA
+                </p>
+                <p>877-575-9775</p>
+                <p><a href="mailto:shop@puppetlabs.com">shop@puppetlabs.com</a></p>
+            </h5>
+        </div>
+    </div>
+    <div class="col-md-3 pull-right">
+        <div class="row text-right">
+            <h5>
+                <p>
+                <a href=https://puppetlabs.com/about/careers" target="_blank">Careers</a> | <a href="https://puppetlabs.com/about" target="_blank">Company</a> | <a href="http://shop.puppetlabs.com/contact-us" target="_blank">Contact Us</a>
+                <br><br>
+                &copy; 2014 Puppet Labs
+                </p>
+            </h5>
         </div>
     </div>
 </footer>

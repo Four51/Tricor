@@ -4,3 +4,80 @@ Theme name: My SPA Theme
 Version: 1.0
 Template: Howdy
 */
+
+.navbar, .navbar-nav {
+    max-height: 30px;
+    min-height: 30px;
+    border-bottom-width: 0px;
+}
+
+.navbar-nav > li > a {
+    height: 30px;
+}
+
+.navbar .container .navbar-nav.pull-left li.fadeInLeft a i, .navbar .container-view .navbar-nav.pull-left li.fadeInLeft a i {
+    color: #ffffff;
+}
+
+.navbar .container .navbar-nav.pull-left li a, .navbar .container-view .navbar-nav.pull-left li,
+.navbar .container .navbar-nav.pull-right li a, .navbar .container-view .navbar-nav.pull-right li {
+    padding-top: 5px;
+    padding-bottom: 8px;
+}
+
+.navbar .container .navbar-nav.pull-right li a i:first-of-type, .navbar .container-view .navbar-nav.pull-right li a i:first-of-type {
+    border: none;
+}
+
+.jumbotron {
+    margin: 0 0 0;
+    height: 105px;
+    padding: 7px 0 0 75px;
+    display: block;
+}
+
+.FAQ-wrapper {
+    margin: -45px 180px 0;
+
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #312a6e;
+}
+
+h4, .h4 {
+    font-size: 20px;
+}
+
+.FAQ-wrapper p {
+    color: #777;
+    padding-bottom: 15px;
+}
+
+.copyright-view {
+    background-color: #ddd;
+    width: 100%;
+    padding: 25px 150px 25px 150px;
+    height: 135px;
+}
+
+.copyright-view p, .copyright-view p > a {
+    margin: 3px 0 0;
+    color: #777;
+}
+
+body {
+    margin-bottom: 0;
+}
+
+.product-well {
+    background-color: #f5f5f5;
+}
+#addtocart {
+    background-color: #88b236;
+    color: #ffffff;
+}
+
+.panel-product-list ul li a{
+    padding: 5px 0;
+}
