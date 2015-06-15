@@ -9,20 +9,16 @@ Template: Howdy
     max-height: 30px;
     min-height: 30px;
     border-bottom-width: 0px;
+    padding-right: 75px;
 }
 
 .navbar-nav > li > a {
     height: 30px;
 }
 
-.navbar .container .navbar-nav.pull-left li.fadeInLeft a i, .navbar .container-view .navbar-nav.pull-left li.fadeInLeft a i {
-    color: #ffffff;
-}
-
 .navbar .container .navbar-nav.pull-left li a, .navbar .container-view .navbar-nav.pull-left li,
 .navbar .container .navbar-nav.pull-right li a, .navbar .container-view .navbar-nav.pull-right li {
-    padding-top: 5px;
-    padding-bottom: 8px;
+    padding: 5px 15px 8px;
 }
 
 .navbar .container .navbar-nav.pull-right li a i:first-of-type, .navbar .container-view .navbar-nav.pull-right li a i:first-of-type {
@@ -31,9 +27,14 @@ Template: Howdy
 
 .jumbotron {
     margin: 0 0 0;
-    height: 105px;
-    padding: 7px 0 0 75px;
+    height: 100px;
+    padding: 7px 0 0 7%;
     display: block;
+    text-align: left;
+}
+
+.jumbotron h2 img {
+    max-height: none;
 }
 
 .FAQ-wrapper {
@@ -56,13 +57,17 @@ h4, .h4 {
 
 .copyright-view {
     background-color: #ddd;
-    width: 100%;
-    padding: 25px 150px 25px 150px;
-    height: 135px;
+    padding: 24px 0;
+    height: 100%;
 }
 
-.copyright-view p, .copyright-view p > a {
-    margin: 3px 0 0;
+.copyright-view {
+    margin: 82px 0 0;
+    color: #777;
+    font-size: 13px;
+}
+
+.copyright-view a {
     color: #777;
 }
 
@@ -75,9 +80,27 @@ body {
 }
 #addtocart {
     background-color: #88b236;
+}
+
+#addtocart p {
     color: #ffffff;
 }
 
 .panel-product-list ul li a{
     padding: 5px 0;
+}
+
+.footer-wrapper {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .nav > li {
+        display: block;
+        float: left;
+        position: relative;
+    }
 }
