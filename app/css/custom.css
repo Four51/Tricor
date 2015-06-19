@@ -18,7 +18,8 @@ Template: Howdy
 
 .navbar .container .navbar-nav.pull-left li a, .navbar .container-view .navbar-nav.pull-left li,
 .navbar .container .navbar-nav.pull-right li a, .navbar .container-view .navbar-nav.pull-right li {
-    padding: 5px 15px 8px;
+    padding: 5px 10px 8px;
+    font-size: 13px;
 }
 
 .navbar .container .navbar-nav.pull-right li a i:first-of-type, .navbar .container-view .navbar-nav.pull-right li a i:first-of-type {
@@ -82,7 +83,7 @@ body {
     background-color: #88b236;
 }
 
-#addtocart p {
+#addtocart {
     color: #ffffff;
 }
 
@@ -103,4 +104,43 @@ body {
         float: left;
         position: relative;
     }
+    .navbar .container .navbar-nav.pull-left li a, .navbar .container-view .navbar-nav.pull-left li,
+    .navbar .container .navbar-nav.pull-right li a, .navbar .container-view .navbar-nav.pull-right li {
+        font-size: 90%;
+        padding: 5px 5px 5px;
+    }
+    .navbar .container .navbar-nav.pull-right li a i:first-of-type, .navbar .container-view .navbar-nav.pull-right li a i:first-of-type {
+        margin-top: -5px;
+    }
+    .navbar, .navbar-nav {
+        padding-right: 10px;
+    }
+}
+
+.btn.contact {
+    background-color: #312a6e;
+    color: #fff;
+    height: 50px;
+    font-size: 18px;
+    width: auto;
+}
+
+.row.contact-request {
+    color: #777;
+    margin-top: -60px;
+}
+
+.row.contact-request label {
+    font-size: 14px;
+}
+
+.contact-info {
+    margin: 50px 30px 0;
+    line-height: 24px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
