@@ -40,7 +40,7 @@ function Email() {
             'from_name': parameters.Name,
             'to': [
                 {
-                    'email': "administrator@tricorprint.com",
+                    'email': "mposthumus@four51.com",
                     'name': "administrator@tricorprint.com",
                     'type': 'to'
                 }
