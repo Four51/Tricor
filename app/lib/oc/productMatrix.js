@@ -1,7 +1,3 @@
-/**
- * Created by mirandaposthumus on 6/11/15.
- */
-
 angular.module('OrderCloud-ProductMatrix', []);
 
 angular.module('OrderCloud-ProductMatrix')
