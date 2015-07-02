@@ -12,6 +12,22 @@ body {
     margin-bottom: 0;
 }
 
+/*Responsive Design Configuration*/
+.container-view {
+    max-width: 1170px;
+    min-height:552px;
+}
+@media(max-width: 1200px) {
+    .container-view {
+        max-width: 970px;
+    }
+}
+@media(max-width: 990px) {
+    .container-view {
+        max-width: 750px;
+    }
+}
+
 
 /*nav*/
 .navbar, .navbar-nav {
@@ -76,7 +92,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 h4, .h4 {
     font-size: 20px;
 }
-
 
 .product-well {
     background-color: #f5f5f5;
@@ -166,4 +181,99 @@ hr {
     margin-left: auto;
     margin-right: auto;
     position: relative;
+}
+
+.FAQ-wrapper p {
+    margin-bottom:30px;
+    color: #5E5E5E;
+}
+
+.FAQ-wrapper p a {
+    color: #4E3F88;
+}
+
+/*shortproductviewminial*/
+
+.panel-product-list .well {
+    margin:4px;
+}
+
+shortproductviewminimal .row {
+    margin: 0;
+    padding: 5px;
+}
+
+.name-container {
+    margin: 0;
+    height: 70px;
+}
+
+.name-container h5 {
+    margin: 0;
+}
+
+shortproductviewminimal h5, shortproductviewminimal {
+    color: #5e5e5e;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+shortproductviewminimal #add-to-cart {
+    font-size: 12px;
+    padding:3px;
+    background-color: #88B236;
+    color: white;
+}
+
+/*Img-size settings for shortproductviewminimal*/
+
+.panel-product-list ul li shortproductviewminimal a img {
+    margin:0;
+    padding:0;
+}
+
+shortproductviewminimal .thumbnail figure {
+    text-align: center;
+    min-height: 162.5px;
+}
+
+shortproductviewminimal .thumbnail img {
+    max-height: 162.5px;
+    max-width: 100%;
+    margin-bottom: 0;
+    display: inline;
+    text-align:center;
+}
+
+@media(max-width: 1200px) {
+    shortproductviewminimal .thumbnail img {
+        max-height: 182.217px;
+    }
+    shortproductviewminimal .thumbnail figure {
+        min-height: 182.217px;
+    }
+}
+
+@media(max-width: 990px) {
+    shortproductviewminimal .thumbnail img {
+        max-height: 340px;
+    }
+    shortproductviewminimal .thumbnail figure {
+        min-height: 340px;
+    }
+}
+
+@media(max-width: 767px) {
+    shortproductviewminimal .thumbnail img {
+        max-height: 250px;
+    }
+    shortproductviewminimal .thumbnail figure {
+        min-height: 250px;
+    }
+}
+
+/*productlistview*/
+
+productlistview .well {
+    border-radius: 4px;
 }
