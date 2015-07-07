@@ -10,7 +10,7 @@
 </section>
 <section>
     <div class="row">
-        <div ng-class="{ 'col-md-8 col-md-offset-2': navStatus.visible, 'col-md-12': !navStatus.visible }" >
+        <div class="product-list-container" ng-class="{ 'col-md-8 col-md-offset-2': navStatus.visible, 'col-md-12': !navStatus.visible }" >
             <loadingindicator ng-show="productLoadingIndicator" title="{{'Please wait while we fetch all products' | r | xlat}}"/>
             <productlistview></productlistview>
         </div>

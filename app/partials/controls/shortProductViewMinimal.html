@@ -11,27 +11,13 @@
     </div>
     <div class="row name-container">
         <h5 class="pull-left">{{LineItem.Product.Name}}</h5>
-        <!--<p ng-bind-html="trustedDescription(LineItem.Product)" ng-show="LineItem.Product.Description" />-->
-        <!--<p ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">-->
-            <!--&lt;!&ndash;{{LineItem.PriceSchedule.PriceBreaks[0].Quantity}}&ndash;&gt;-->
-            <!--&lt;!&ndash;<span ng-show="LineItem.Product.QuantityMultiplier > 1">(x {{LineItem.Product.QuantityMultiplier}})</span>&ndash;&gt;-->
-            <!--&lt;!&ndash;{{'for' | xlat}} &ndash;&gt;-->
-            <!--&lt;!&ndash;{{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}&ndash;&gt;-->
-        <!--</p>-->
-        <!--<p ng-show="LineItem.Product.UnitOfMeasure">
-            {{'Unit of Measure' | r | xlat}}: {{LineItem.Product.UnitOfMeasure}}
-        </p>-->
-
-        <!--<p ng-show="LineItem.Product.DisplayInventory && inventoryDisplay(LineItem.Product, LineItem.Variant) != undefined">-->
-            <!--{{'Quantity Available' | r | xlat}}: {{inventoryDisplay(LineItem.Product, LineItem.Variant) }}-->
-        <!--</p>-->
     </div>
     <div class="row">
         <div class="col-xs-5 pull-left">
         <h5>{{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}</h5>
         </div>
         <div class="pull-right" style="max-width: 100%">
-        <a class="btn btn-default btn-block" id="add-to-cart" href="product/{{LineItem.Product.InteropID}}">{{('ADD' | r) + ' ' + ('TO' | r) + ' ' + ('CART' | r) | xlat}}</a>
+        <a class="btn btn-default btn-sm" href="product/{{LineItem.Product.InteropID}}">{{('add' | r) + ' ' + ('to' | r) + ' ' + ('cart' | r) | xlat}}</a>
         </div>
     </div>
 </div>
