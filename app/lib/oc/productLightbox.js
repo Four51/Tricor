@@ -1,7 +1,3 @@
-/**
- * Created by mirandaposthumus on 6/26/15.
- */
-
 angular.module('OrderCloud-ProductLightbox', [
     'ngTouch',
     'ui.bootstrap'
@@ -25,16 +21,17 @@ function productlightbox() {
     function template() {
         return [
             '<style>',
-            '.galleryThumbs {width:100%;margin:0 auto;position: relative;text-align: center;}',
+            '.galleryThumbs {width:100%;margin:0 auto;position: relative;}',
             '.galleryThumbs li {padding: 3px 5px;list-style-type: none;display:inline-block;}',
             '.galleryThumbs li:first-child {padding-left:0;}',
-            '.galleryThumbs .img-thumbnail {border:1px solid #ccc;max-height:50px;max-width:50px;padding:0}',
-            '.galleryThumbs .active .img-thumbnail {border:1px solid #6e6e6e;}',
+            '.galleryThumbs .img-thumbnail {border:0 none;height:130px;width:90px;padding:0;border-radius:0}',
+            '.galleryThumbs .active .img-thumbnail {border:0 none}',
             '.galleryImages li {list-style-type:none;}',
             '.galleryImages a {display:block;}',
             '.galleryImages a.no-click {cursor:none;pointer-events: none;}',
             '.galleryImages .product-image-large {display:none;}',
             '.galleryImages .active .product-image-large {display:block !important;max-height:100%;max-width:100%;position:relative;top:0;}',
+            '.panel .panel-footer { border:0 none; background:transparent;padding: 0 16px;}',
             '</style>',
             '<div class="panel-body">',
             '<ul class="galleryImages">',
@@ -52,7 +49,7 @@ function productlightbox() {
             '<ul class="galleryThumbs">',
             '<li ng-repeat="image in LineItem.images">',
             '<a ng-click="$parent.index=$index" ng-class="{active: $index==$parent.index}">',
-            '<img ng-src="{{image.url}}" class="img-thumbnail img-responsive" />',
+            '<img ng-src="{{image.url}}" class="img-thumbnail" />',
             '</a>',
             '</li>',
             '</ul>',
