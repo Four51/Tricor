@@ -95,10 +95,9 @@ h4, .h4 {
     left:3px;
 }
 
-li.cart {
-    margin-left:-14px;
-    z-index:1;
-   /* padding:5px 11px 5px 5px;*/
+.navbar .container .navbar-nav.pull-right li.cart a,
+.navbar .container-view .navbar-nav.pull-right li.cart a {
+     left:-8px;
 }
 
 @media (max-width: 768px) {

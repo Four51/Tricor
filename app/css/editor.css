@@ -8,7 +8,7 @@
 .navbar-nav li.dropdown li > a:hover  {background-color: #544089;}
 .navbar-nav li.dropdown li > a:focus  {background-color: #544089;}
 .navbar .container .navbar-nav li.active .fa-caret-down  {color: #544089;}
-.navbar-nav li.dropdown li > a  {color: #333333;}
+.navbar-nav li.dropdown li > a  {color: #333333; min-width:160px;}
 .navbar-nav li.dropdown li > a:hover  {color: #FFFFFF;}
 .navbar .container .navbar-nav.pull-right li a i:first-of-type  {border-color: #FFFFFF;}
 .badge  {background-color: #FFFFFF;}
