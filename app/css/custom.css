@@ -500,3 +500,7 @@ hr {
     margin-right: auto;
     position: relative;
 }
+
+.contact-request a {
+    color: #4E3F88;
+}
