@@ -56,7 +56,7 @@ function productmatrix() {
             '</div>',
             '</div>',
             '<div class="alert alert-danger" style="margin-top:20px;" ng-show="qtyError" ng-bind-html="qtyError"></div>',
-            '<button class="btn btn-success btn-block btn-lg" type="button" id="451_btn_orderadd" ng-disabled="qtyError" ng-click="addVariantsToOrder()">',
+            '<button class="btn btn-success btn-block btn-lg" type="button" id="451_btn_orderadd" ng-disabled="qtyError " ng-click="addVariantsToOrder()">',
             '<loadingindicator ng-show="addToOrderIndicator" /><i ng-show="qtyError" class="fa fa-warning"></i> {{addToOrderText | r}}</button>',
             '</div>'
         ].join('');
@@ -90,6 +90,7 @@ function ProductMatrixCtrl($scope, $routeParams, $location, ProductDisplayServic
             }
         }, 1, 100, searchTerm);
     }
+
     init($scope.searchTerm);
 
     $scope.qtyChanged = function() {
@@ -122,12 +123,12 @@ function ProductMatrixCtrl($scope, $routeParams, $location, ProductDisplayServic
 
     $scope.addVariantsToOrder = function(){
 
-        $scope.qtyError = "";
+        /*$scope.qtyError = "";
 
         ProductMatrix.validateQuantity($scope.comboVariants, $scope.product, function(message) {
             $scope.qtyError = "<p>Please select a valid quantity</p>";
             //$scope.qtyError = message; //this shows all of the messages for each vboss variant
-        });
+        });*/
 
 
         if(!$scope.currentOrder){
@@ -314,7 +315,10 @@ function ProductMatrix($451, Variant) {
 
                 if (variant.Quantity) {
                     if (!$451.isPositiveInteger(qty)) {
+                    //if (qty == 0 || qty == null || qty == '') {
                         qtyError += "<p>Please select a valid quantity for " + variant.DisplayName[0] + " " + (variant.DisplayName[1] ? variant.DisplayName[1] : "") + "</p>";
+                        variant.QtyError = true;
+
                     }
                     else {
                         totalQty += +(variant.Quantity);
