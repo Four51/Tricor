@@ -65,6 +65,45 @@ h4, .h4 {
     color:#fff;
 }
 
+label, label.required {
+    color:#777;
+}
+
+input.ng-invalid,
+textarea.ng-invalid,
+select.ng-invalid,
+input.ng-invalid:invalid,
+textarea.ng-invalid:invalid,
+select.ng-invalid:invalid {
+    border-color: #cccccc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #cccccc;
+}
+
+input.ng-invalid:focus,
+textarea.ng-invalid:focus,
+select.ng-invalid:focus,
+input.ng-invalid:invalid:focus,
+textarea.ng-invalid:invalid:focus,
+select.ng-invalid:invalid:focus,
+input.ng-invalid.ng-invalid:focus,
+textarea.ng-invalid.ng-invalid:focus,
+select.ng-invalid.ng-invalid:focus,
+input.ng-invalid:invalid.ng-invalid:focus,
+textarea.ng-invalid:invalid.ng-invalid:focus,
+select.ng-invalid:invalid.ng-invalid:focus,
+input.ng-invalid:invalid:focus,
+textarea.ng-invalid:invalid:focus,
+select.ng-invalid:invalid:focus,
+input.ng-invalid:invalid:invalid:focus,
+textarea.ng-invalid:invalid:invalid:focus,
+select.ng-invalid:invalid:invalid:focus {
+    border-color: #cccccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+    color: #cccccc;
+}
+
 /*nav*/
 .navbar .navbar-nav {
     left: -74px;
@@ -367,40 +406,6 @@ productmatrix .btn:hover {
     margin-top: -30px;
 }
 
-.contact-request input.ng-invalid,
-.contact-request textarea.ng-invalid,
-.contact-request select.ng-invalid,
-.contact-request input.ng-invalid:invalid,
-.contact-request textarea.ng-invalid:invalid,
-.contact-request select.ng-invalid:invalid {
-    border-color: #cccccc;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    color: #cccccc;
-}
-
-.contact-request input.ng-invalid:focus,
-.contact-request textarea.ng-invalid:focus,
-.contact-request select.ng-invalid:focus,
-.contact-request input.ng-invalid:invalid:focus,
-.contact-request textarea.ng-invalid:invalid:focus,
-.contact-request select.ng-invalid:invalid:focus,
-.contact-request input.ng-invalid.ng-invalid:focus,
-.contact-request textarea.ng-invalid.ng-invalid:focus,
-.contact-request select.ng-invalid.ng-invalid:focus,
-.contact-request input.ng-invalid:invalid.ng-invalid:focus,
-.contact-request textarea.ng-invalid:invalid.ng-invalid:focus,
-.contact-request select.ng-invalid:invalid.ng-invalid:focus,
-.contact-request input.ng-invalid:invalid:focus,
-.contact-request textarea.ng-invalid:invalid:focus,
-.contact-request select.ng-invalid:invalid:focus,
-.contact-request input.ng-invalid:invalid:invalid:focus,
-.contact-request textarea.ng-invalid:invalid:invalid:focus,
-.contact-request select.ng-invalid:invalid:invalid:focus {
-    border-color: #cccccc;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
-    color: #cccccc;
-}
 
 .contact-request label {
     font-size: 14px;
@@ -422,6 +427,10 @@ productmatrix .btn:hover {
     width: auto;
     position:relative;
     top:20px;
+}
+
+.contact-request a {
+    color: #4E3F88;
 }
 
 .contact-info {
@@ -544,8 +553,4 @@ hr {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-}
-
-.contact-request a {
-    color: #4E3F88;
 }
