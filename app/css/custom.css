@@ -335,8 +335,17 @@ shortproductviewminimal .thumbnail img {
 /*TRT-01802*/
 .product-detail-default .form-group .btn-success {
     background-color:#88B236;
+    border:1px solid #88b236;
 }
 /*TRT-01802*/
+
+
+/*TRT-01803*/
+.product-detail-default .form-group .text-info,
+.product-detail-default .form-group label.required{
+    color:#777;
+}
+/*TRT-01803*/
 
 /*should this get moved to matrix?*/
 .matrix {
