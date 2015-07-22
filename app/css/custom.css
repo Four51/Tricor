@@ -2,7 +2,7 @@
 Static file for Theme changes
 Theme name: Tricor - Puppet Labs
 Version: 1.0
-Last Updated: 7/7/15
+Last Updated: 7/21/15
 Developers: Miranda, Jen, Max
 
 Brand Colors:
@@ -13,12 +13,19 @@ gray #5E5E5E
 lt green #88B236
 */
 
+html {
+    -webkit-font-smoothing: antialiased;
+}
 
 /*global*/
 body {
     margin-bottom: 0;
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size:14px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .container-view {
@@ -164,7 +171,6 @@ h4, .h4 {
 .welcome {
     max-width: 1170px;
     min-height:180px;
-    /*font-family: sans-serif;*/
     position:relative;
     top: -40px;
 }
@@ -172,7 +178,6 @@ h4, .h4 {
 .welcome h3 {
     margin-bottom:20px;
     font-size:22px;
-    /*font-family: sans-serif;*/
 }
 
 .welcome p {
@@ -185,7 +190,6 @@ h4, .h4 {
     color:#fff;
     font-size:14px;
     font-weight:bold;
-    font-family:Arial Narrow, helvetica condensed, sans-serif;
     /*padding:0;
     line-height:1;*/
     min-height:30px;
@@ -313,9 +317,6 @@ shortproductviewminimal .thumbnail img {
 }
 
 .product-detail-default .panel-no-panels .panel-heading .panel-title {
-    /*font-size: 14px;
-    letter-spacing: 0.08em;
-    padding: 25px 15px;*/
     padding:20px 15px;
     text-align: left;
     text-transform: capitalize;
@@ -325,6 +326,19 @@ shortproductviewminimal .thumbnail img {
     border-bottom:0;
 }
 
+.product-detail-default .table-responsive tbody td {
+    border: 1px solid #dddddd;
+    font-size: 0.9em;
+    padding: 0.5em;
+}
+
+/*TRT-01802*/
+.product-detail-default .form-group .btn-success {
+    background-color:#88B236;
+}
+/*TRT-01802*/
+
+/*should this get moved to matrix?*/
 .matrix {
     position:relative;
     top:-20px;
@@ -335,12 +349,7 @@ productmatrix .btn:hover {
     background-color:#88B236;
     border:1px solid #88B236;
 }
-
-.product-detail-default .table-responsive tbody td {
-    border: 1px solid #dddddd;
-    font-size: 0.9em;
-    padding: 0.5em;
-}
+/*should this get moved to matrix?*/
 
 
 /*contact*/
