@@ -24,7 +24,7 @@ function productlightbox() {
             '.galleryThumbs {width:100%;margin:0 auto;position: relative;}',
             '.galleryThumbs li {padding: 3px 5px;list-style-type: none;display:inline-block;}',
             '.galleryThumbs li:first-child {padding-left:0;}',
-            '.galleryThumbs .img-thumbnail {border:0 none;height:130px;width:90px;padding:0;border-radius:0}',
+            '.galleryThumbs .img-thumbnail {border:0 none; max-height:130px;max-width:90px; padding:0;border-radius:0}',
             '.galleryThumbs .active .img-thumbnail {border:0 none}',
             '.galleryImages li {list-style-type:none;}',
             '.galleryImages a {display:block;}',
