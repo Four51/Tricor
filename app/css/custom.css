@@ -467,6 +467,14 @@ hr {
     border-color:#4E3F88;
 }
 
+/*TRT-01811*/
+.checkout .text-info {
+    color:#333;
+}
+/*TRT-01811*/
+
+/*checkout*/
+
 /*faq*/
 .FAQ-wrapper {
     margin: -45px 180px 0;
