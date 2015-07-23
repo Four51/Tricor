@@ -44,7 +44,7 @@ four51.app.config(['$routeProvider', '$locationProvider', function($routeProvide
         when('/conditions', { templateUrl: 'partials/Conditions/conditions.html', controller: 'ConditionsCtrl' }).
         when('/reports', { templateUrl: 'partials/reportsView.html', controller: 'ReportsCtrl' }).
         when('/report/:id', { templateUrl: 'partials/Reporting/reportView.html', controller: 'ReportCtrl' }).
-        when('/FAQ', { templateUrl: 'partials/Messages/FAQ.html' }).
+        when('/FAQ', { templateUrl: 'partials/controls/FAQ.html' }).
         when('/contact', { templateUrl: 'partials/Messages/contact.html', controller: 'ContactUsCtrl' }).
         otherwise({redirectTo: '/catalog/PuppetLabAllProducts'});
 }]);
