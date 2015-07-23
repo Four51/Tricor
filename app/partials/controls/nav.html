@@ -61,7 +61,8 @@
                         </a>
                     </li>
                     <li class="cart" ng-class="{'active': isActive(['cart', 'checkout'])}">
-                        <a id="451qa_cart_link" href="cart">
+                        <a id="451qa_cart_link" ng-show="cartCount && user.CurrentOrderID" class="cart" href="cart">
+                            <span ng-bind="cartCount" class="badge"></span>
                             <i class="fa fa-shopping-cart"></i>
                             <span class="hidden-xs">{{'View Cart' | r | xlat}}</span>
                             <!--<i class="fa fa-caret-down"></i>-->
