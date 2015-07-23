@@ -172,6 +172,9 @@
                     </div>
                 </div>
             </div>
+
+            <orderbuttons view="cart" continue="true"></orderbuttons>
+
             <div class="navbar-fixed-bottom">
                 <div class="alert-warning text-center" style="padding: 10px;" ng-if="currentOrder.RepeatError">
                     {{'Some items were not added to your repeat order' | r | xlat}}: {{currentOrder.RepeatError}}
@@ -207,7 +210,7 @@
                         </li>
                     </ul>
                 </div>
-                <orderbuttons view="cart" continue="true"></orderbuttons>
+                <!--<orderbuttons view="cart" continue="true"></orderbuttons>-->
             </div>
         </form>
     </div>

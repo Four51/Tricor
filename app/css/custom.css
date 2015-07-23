@@ -462,23 +462,29 @@ hr {
     border-color:#5E5E5E;
 }
 
-.cart .navbar-fixed-bottom .btn-info,
-.checkout .navbar-fixed-bottom .btn-info {
+.cart orderbuttons .btn,
+.checkout orderbuttons .btn {
+    width:100%;
+    float:left;
+}
+
+.cart orderbuttons .btn-info,
+.checkout orderbuttons .btn-info {
     background-color:#4E3F88;
 }
 
-.cart .navbar-fixed-bottom .btn-info:hover,
-.checkout .navbar-fixed-bottom .btn-info:hover {
+.cart orderbuttons .btn-info:hover,
+.checkout orderbuttons .btn-info:hover {
     background-color:#312a6e;
 }
 
-.cart .navbar-fixed-bottom .btn-primary,
-.checkout .navbar-fixed-bottom .btn-primary {
+.cart orderbuttons .btn-primary,
+.checkout orderbuttons .btn-primary {
     background-color:#312A6E;
 }
 
-.cart .navbar-fixed-bottom .btn-primary:hover,
-.checkout .navbar-fixed-bottom .btn-primary:hover {
+.cart orderbuttons .btn-primary:hover,
+.checkout orderbuttons .btn-primary:hover {
     background-color:#4E3F88;
 }
 

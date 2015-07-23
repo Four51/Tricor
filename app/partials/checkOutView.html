@@ -9,6 +9,10 @@
         <ordershipping />
         <orderbilling ng-show="currentOrder.BillingEnabled" />
         <orderapprovals ng-show="currentOrder.Approvals" />
+
+
+        <orderbuttons view="checkout" continue="true"></orderbuttons>
+
         <div class="navbar-fixed-bottom">
             <div class="view-response-message alert-success text-center" alert-show="actionMessage">
                 <p>{{actionMessage | r | xlat}}</p>
@@ -50,7 +54,7 @@
                     </li>
                 </ul>
             </div>
-            <orderbuttons view="checkout" continue="true"></orderbuttons>
+            <!--<orderbuttons view="checkout" continue="true"></orderbuttons>-->
         </div>
     </div>
 </section>
