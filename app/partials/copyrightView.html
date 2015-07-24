@@ -1,43 +1,41 @@
-<footer class="container copyright-view" ng-hide="isInPath('cart') || isInPath('admin') || isInPath('checkout')">
+<!--<footer class="container copyright-view" ng-hide="isInPath('cart') || isInPath('admin') || isInPath('checkout')">-->
+<footer class="container copyright-view">
     <div class="row footer-wrapper">
         <div class="col-md-4 col-sm-5 col-xs-6">
-            <p>
-                <div class="col-sm-4 col-lg-3" style="padding:0; margin: 0;">
-                    <i class="fa fa-map-marker"></i>
-                    <strong>Address: </strong>
-                </div>
-                <div class="col-sm-8 col-lg-9" style="padding:0; margin: 0;">
-                    308 SW 2nd Ave, 5th Floor
-                    <br>
-                    Portland, OR 97204 USA
-                </div>
-                <br>
-                <br>
-                <div class="col-sm-4 col-lg-3" style="padding:0; margin: 0;">
-                    <i class="fa fa-phone"></i>
-                    <strong>Phone: </strong>
-                </div>
-                <div class="col-sm-8 col-lg-9" style="padding:0; margin: 0;">
-                    <a href="tel:877-575-9775">877-575-9775</a>
-                </div>
-                <br>
-                <div class="col-sm-4 col-lg-3" style="padding:0; margin: 0;">
-                    <i class="fa fa-envelope"></i>
-                    <strong>Email: </strong>
-                </div>
-                <div class="col-sm-8 col-lg-9" style="padding:0; margin: 0;">
-                    <a href="mailto:shop@puppetlabs.com">shop@puppetlabs.com</a>
-                </div>
-                <div class="col-sm-12">   </div>
-            </p>
+            <div class="col-sm-4 col-lg-3">
+                <i class="fa fa-map-marker"></i>
+                <strong>Address: </strong>
+            </div>
+            <div class="col-sm-8 col-lg-9">
+                308 SW 2nd Ave, 5th Floor
+                <br />
+                Portland, OR 97204 USA
+            </div>
+            <br>
+            <br>
+            <div class="col-sm-4 col-lg-3">
+                <i class="fa fa-phone"></i>
+                <strong>Phone: </strong>
+            </div>
+            <div class="col-sm-8 col-lg-9">
+                <a href="tel:877-575-9775">877-575-9775</a>
+            </div>
+            <br>
+            <div class="col-sm-4 col-lg-3">
+                <i class="fa fa-envelope"></i>
+                <strong>Email: </strong>
+            </div>
+            <div class="col-sm-8 col-lg-9">
+                <a href="mailto:shop@puppetlabs.com">shop@puppetlabs.com</a>
+            </div>
         </div>
         <div class="col-md-4 col-sm-2 hidden-xs"> </div>
         <div class="col-md-4 col-sm-5 col-xs-6">
-            <p style="text-align: right;">
+            <p class="text-right">
                 <a target="_blank" href="http://puppetlabs.com/about/careers">Careers</a> |
                 <a target="_blank" href="http://puppetlabs.com/about">Company</a> |
-                <a target="_blank" href="http://shop.puppetlabs.com/contact-us">Contact Us</a>
-                <br>
+                <a target="_blank" href="http://shop.puppetlabs.com/contact-us">Contact Us</a><!-- TODO: should this link be changed?-->
+                <br />
                 &copy; 2014 Puppet Labs
             </p>
         </div>
