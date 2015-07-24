@@ -1,4 +1,4 @@
-#### Puppet Labs - Tricor  / 18.10.1 CT Release and 1.3.0 SPA Release  (0415) - Last Updated: 7/23/15
+#### Puppet Labs - Tricor  / 18.10.1 CT Release and 1.3.0 SPA Release  (0415) - Last Updated: 7/24/15
 ========
 ##### Developers
 Four51: Miranda, Jen, Max
@@ -22,15 +22,6 @@ Four51: Miranda, Jen, Max
 
 `lib/oc/productLightbox.js`
 - Product Lightbox
-
-
-<!--TODO: 
-* about icon not showing on small nav (too far to the left) 
-* small nav height and padding
-* account nav shows addresses and favorites, large nav only shows orders
-* the logout button is both in top nav and account nav
-* the mandrill template needs updated with correct user email information
--->
 
 ##### Custom Views
 `partials/controls/FAQ.html`   
