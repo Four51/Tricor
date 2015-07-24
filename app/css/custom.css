@@ -2,7 +2,7 @@
 Static file for Theme changes
 Theme name: Tricor - Puppet Labs
 Version: 1.0
-Last Updated: 7/22/15
+Last Updated: 7/24/15
 Developers: Miranda, Jen, Max
 
 Brand Colors:
@@ -176,6 +176,10 @@ select.ng-invalid:invalid:invalid:focus {
     }
 
 }*/
+
+.account-navigation {
+    margin-bottom:20px;
+}
 
 /*branding*/
 .jumbotron {
