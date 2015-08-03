@@ -23,10 +23,10 @@ body  {color: #333333;}
 .text-primary  {color: #0C2A3A;}
 .text-info  {color: #31708F;}
 body a  {color: #0C2A3A;}
-.btn-primary  {background-color: #0C2A3A;}
+.btn-primary  {background-color: #312A6E;}
 .btn-primary, .btn-primary:hover  {color: #FFFFFF;}
-.btn-primary  {border-color: #081B24;}
-.btn-primary:hover  {background-color: #051118;}
+.btn-primary  {border-color: #312A6E;}
+.btn-primary:hover  {background-color: #312A6E;}
 .btn-default  {background-color: #FFFFFF;}
 .btn-default, .btn-default:hover  {color: #333333;}
 .btn-default  {border-color: #CCCCCC;}

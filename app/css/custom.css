@@ -96,6 +96,12 @@ select.ng-invalid:invalid:invalid:focus {
     color: #cccccc;
 }
 
+.alert-warning {
+    background-color: #fff;
+    border-color: #fff;
+    color: #777;
+}
+
 /*nav*/
 .navbar .navbar-nav {
     position: relative;
