@@ -448,7 +448,7 @@ fieldset[disabled] .btn-warning.active {
 
 .product-detail-default .panel {
     border:0;
-    box-shadow:0;
+    box-shadow:0 1px 1px rgba(255, 255,255, 0.05);
 }
 
 .product-detail-default .panel-no-panels .panel-heading .panel-title {
