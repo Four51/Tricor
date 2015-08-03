@@ -25,7 +25,6 @@ function securitymodal() {
 SecurityModalCtrl.$inject = ['$scope', '$modal', '$log'];
 function SecurityModalCtrl($scope, $modal, $log) {
 
-    $scope.item = $scope.LineItem;
     $scope.animationsEnabled = true;
 
     $scope.open = function (size) {
@@ -38,12 +37,7 @@ function SecurityModalCtrl($scope, $modal, $log) {
             keyboard: true,
             size: size, // this needs some figuring out
             template: securitymodalopen,
-            controller: SecurityModalOpenCtrl,
-            resolve: {
-                item: function () {
-                    return $scope.LineItem;
-                }
-            }
+            controller: SecurityModalOpenCtrl
         });
 
         function securitymodalopen() {
@@ -72,7 +66,7 @@ function SecurityModalCtrl($scope, $modal, $log) {
                 '<img oncontextmenu="return false;" ' +
                 'alt="Click to Verify - This site has chosen a VeriSign SSL Certificate to improve Web site security" ' +
                 'src="https://seal.verisign.com/getseal?at=0&&sealid=2&dn=WWW.FOUR51.COM&aff=VeriSignCACenter&lang=en" name="seal" border="true" />',
-                    '</a>',
+                '</a>',
                 '<div style="display: none;"><img src="https://extended-validation-ssl.verisign.com/dot_clear.gif"></div>',
                 '</p>',
                 '<h4>Secure Transactions</h4>',
@@ -103,9 +97,7 @@ function SecurityModalCtrl($scope, $modal, $log) {
 
     };
 
-    var SecurityModalOpenCtrl = ['$scope', '$modalInstance', '$modal', 'item', function($scope, $modalInstance, $modal, item) {
-
-        $scope.item = item; // this is the line item passed in from the ProductModalCtrl
+    var SecurityModalOpenCtrl = ['$scope', '$modalInstance', '$modal', function($scope, $modalInstance, $modal) {
 
         $scope.close = function () {
             $modalInstance.close();
