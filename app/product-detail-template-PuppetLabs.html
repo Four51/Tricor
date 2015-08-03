@@ -178,9 +178,9 @@
                                 <loadingindicator ng-show="addToOrderIndicator" />
                                 <i ng-show="lineItemErrors.length > 0" class="fa fa-warning"></i>
                                 {{addToOrderText | r | xlat}}
-                                <span id="451qa_lineitem_total" class="badge" ng-if="!(user.Permissions.contains('HidePricing')) && (LineItem.LineTotal || variantLineItemsOrderTotal) > 0">
+                                <!--<span id="451qa_lineitem_total" class="badge" ng-if="!(user.Permissions.contains('HidePricing')) && (LineItem.LineTotal || variantLineItemsOrderTotal) > 0">
                                     {{(LineItem.LineTotal || variantLineItemsOrderTotal) | culturecurrency}}
-                                </span>
+                                </span>-->
                             </button>
                         </div>
                     </div>

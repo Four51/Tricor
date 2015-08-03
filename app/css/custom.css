@@ -146,6 +146,10 @@ fieldset[disabled] .btn {
     pointer-events: none;
 }
 
+.view-form-icon .quantity div input {
+    color: #777;
+}
+
 /*nav*/
 .navbar .navbar-nav {
     position: relative;
