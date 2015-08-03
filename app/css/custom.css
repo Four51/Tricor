@@ -636,16 +636,20 @@ hr {
     background-color: #ddd;
     padding: 24px 0;
     height: 100%;
-}
-
-.copyright-view {
     margin: 82px 0 0;
     color: #777;
-    font-size: 13px;
+    font-family:"Open Sans", Arial, sans-serif;
+    font-size: 0.9em;
 }
 
-.copyright-view a {
+.copyright-view a,
+.copyright-view a:hover {
     color: #777;
+    padding: 0 0 0 3px;
+}
+
+.copyright-view p.text-right {
+    padding: 0 75px 0 0;
 }
 
 .footer-wrapper {
