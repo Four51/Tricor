@@ -101,6 +101,29 @@ select.ng-invalid:invalid:invalid:focus {
     color: #777;
 }
 
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary.active[disabled],
+fieldset[disabled] .btn-primary.active {
+    background-color: #312A6E;
+    border-color: #312A6E;
+}
+
+/*.btn i {
+    display:none;
+}*/
+
 .btn-danger.disabled, .btn-danger[disabled],
 fieldset[disabled] .btn-danger,
 .btn-danger.disabled:hover,
@@ -147,6 +170,17 @@ fieldset[disabled] .btn {
 }
 
 .view-form-icon .quantity div input {
+    color: #777;
+}
+
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+
+.text-success {
     color: #777;
 }
 
@@ -540,15 +574,12 @@ hr {
     background-color:#4E3F88;
 }
 
-.panel-order .btn-info {
-    background-color:#4E3F88;
-    border-color:#312a6e;
+.panel-order .btn-info,
+.panel-order .btn-info:hover {
+    background-color:#777;
+    border-color:#777;
 }
 
-.panel-order .btn-info:hover {
-    background-color:#312a6e;
-    border-color:#4E3F88;
-}
 
 /*TRT-01811*/
 .checkout .text-info {
