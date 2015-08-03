@@ -35,10 +35,10 @@ body a, body a:hover, body a:focus  {color: #68549D;}
 .btn-info, .btn-info:hover  {color: #FFFFFF;}
 .btn-info  {border-color: #4e3f88;}
 .btn-info:hover  {background-color: #39B3D7;}
-.btn-success  {background-color: #5CB85C;}
+.btn-success  {background-color: #88B236;}
 .btn-success, .btn-success:hover  {color: #FFFFFF;}
-.btn-success  {border-color: #4CAE4C;}
-.btn-success:hover  {background-color: #47A447;}
+.btn-success  {border-color: #88B236;}
+.btn-success:hover  {background-color: #88B236;}
 .btn-warning  {background-color: #ddd;}
 .btn-warning, .btn-warning:hover  {color: #525252;}
 .btn-warning  {border-color: #ddd;}
