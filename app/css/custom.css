@@ -120,7 +120,9 @@ fieldset[disabled] .btn-primary.active {
     border-color: #312A6E;
 }
 
-.btn i.fa-warning {
+.btn i.fa-warning,
+.checkout i.fa-warning,
+.checkout i.fa-exclamation-circle {
     display:none;
 }
 
@@ -157,8 +159,8 @@ fieldset[disabled] .btn-danger.active {
 .btn-warning.active,
 .open .dropdown-toggle.btn-warning {
     color: #525252;
-    background-color: #ddd;;
-    border-color: #ddd;;
+    background-color: #ddd;
+    border-color: #ddd;
 }
 
 .btn-success:hover,
@@ -610,11 +612,13 @@ hr {
 
 .gift-card-redemption-view .btn-success,
 .gift-card-redemption-view .btn-success:hover,
-.gift-card-redemption-view .btn-success:focus {
+.gift-card-redemption-view .btn-success:focus,
+.panel-summary .btn-success,
+.panel-summary .btn-success:hover,
+.panel-summary .btn-success:focus {
     background-color:#777;
     border-color:#777;
 }
-
 
 /*TRT-01811*/
 .checkout .text-info {
