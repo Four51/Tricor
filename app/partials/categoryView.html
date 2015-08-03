@@ -1,5 +1,5 @@
 <section class="welcome">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-9 col-md-offset-2">
         <h3>Shop Puppet</h3>
         <p>Welcome to the Puppet Labs Shop! We're delighted to bring you our most popular Puppet items &mdash; and hope you'll be thrilled to show off your Puppet pride.</p>
         <br />
@@ -9,10 +9,8 @@
     </div>
 </section>
 <section>
-    <div class="row">
-        <div class="product-list-container" ng-class="{ 'col-md-8 col-md-offset-2': navStatus.visible, 'col-md-12': !navStatus.visible }" >
-            <loadingindicator ng-show="productLoadingIndicator" title="{{'Please wait while we fetch all products' | r | xlat}}"/>
-            <productlistview></productlistview>
-        </div>
+    <div class="product-list-container col-xs-12 col-md-9 col-md-offset-2">
+        <loadingindicator ng-show="productLoadingIndicator" title="{{'Please wait while we fetch all products' | r | xlat}}"/>
+        <productlistview></productlistview>
     </div>
 </section>

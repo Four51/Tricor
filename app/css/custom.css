@@ -345,6 +345,7 @@ fieldset[disabled] .btn-warning.active {
 .welcome p {
     font-size:16px;
     color:#5e5e5e;
+    width: 87%;
 }
 
 .welcome .btn {
@@ -376,79 +377,44 @@ fieldset[disabled] .btn-warning.active {
     border-radius: 4px;
 }
 
-shortproductviewminimal .row {
-    margin: 0;
-    padding: 5px;
-}
-
-.name-container {
-    margin: 0;
-    height: 50px;
-}
-
-.name-container h5 {
-    margin: 0;
-}
-
-shortproductviewminimal h5, shortproductviewminimal {
-    color: #5e5e5e;
-    font-family: sans-serif;
-    font-size: 13px;
-}
-
-shortproductviewminimal a.btn-sm,
-shortproductviewminimal a.btn-sm:hover {
-    font-size: 12px;
-    background-color: #88B236;
-    color: white;
-    text-transform:uppercase;
-}
-
-.panel-product-list ul li shortproductviewminimal a img {
+.panel-product-list ul li a img {
+    max-height:100%;
+    padding:4px;
     margin:0;
-    padding:0;
 }
 
-shortproductviewminimal .thumbnail figure {
-    text-align: center;
-    min-height: 162.5px;
+.product-list-container .panel-product-list {
+    max-width:820px;
 }
 
-shortproductviewminimal .thumbnail img {
-    max-height: 162.5px;
-    max-width: 100%;
-    margin-bottom: 0;
-    display: inline;
-    text-align:center;
+.panel-product-list ul li.inline h3 {
+    color: #5e5e5e;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: -20px;
+    min-height: 40px;
+    padding: 0;
 }
 
-@media(max-width: 1200px) {
-    shortproductviewminimal .thumbnail img {
-        max-height: 182.217px;
-    }
-    shortproductviewminimal .thumbnail figure {
-        min-height: 182.217px;
-    }
+.product-list-container .panel-product-list .inventory {
+    min-height:20px;
 }
 
-@media(max-width: 990px) {
-    shortproductviewminimal .thumbnail img {
-        max-height: 340px;
-    }
-    shortproductviewminimal .thumbnail figure {
-        min-height: 340px;
-    }
+.product-list-container .panel-product-list .price {
+    font-size:12px;
+    color: #5e5e5e;
+    text-align:left;
 }
 
-@media(max-width: 767px) {
-    shortproductviewminimal .thumbnail img {
-        max-height: 250px;
-    }
-    shortproductviewminimal .thumbnail figure {
-        min-height: 250px;
-    }
+.product-list-container .panel-product-list a.btn-success {
+    width:50%;
+    float:right;
+    text-transform:uppercase;
+    font-family:arial narrow, helvetica condensed, sans-serif;
 }
 
+
+/**/
 .product-detail-default .product-details  {
     padding:0 15px;
     width:50%;

@@ -1,5 +1,5 @@
 <div class="451qa_prod_item row">
-    <div class="row">
+    <div class="col-xs-12 text-center">
         <a class="thumbnail" href="product/{{LineItem.Product.InteropID}}">
             <figure ng-show="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl" >
                 <img ng-src="{{LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl}}"/>
@@ -9,15 +9,25 @@
             </div>
         </a>
     </div>
-    <div class="row name-container">
-        <h5 class="pull-left">{{LineItem.Product.Name}}</h5>
-    </div>
-    <div class="row">
-        <div class="col-xs-5 pull-left">
-        <h5>{{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}</h5>
-        </div>
-        <div class="pull-right" style="max-width: 100%">
-        <a class="btn btn-default btn-sm" href="product/{{LineItem.Product.InteropID}}">{{('add' | r) + ' ' + ('to' | r) + ' ' + ('cart' | r) | xlat}}</a>
+    <div class="col-xs-12 text-left">
+        <div class="panel-body">
+            <h3>{{LineItem.Product.Name}}</h3>
+            <!--<div>
+                <p ng-bind-html="trustedDescription(LineItem.Product)" ng-show="LineItem.Product.Description" />
+                <p ng-show="LineItem.Product.UnitOfMeasure">
+                    {{'Unit of Measure' | r | xlat}}: {{LineItem.Product.UnitOfMeasure}}
+                </p>
+                <span class="inventory" ng-show="LineItem.Product.DisplayInventory && inventoryDisplay(LineItem.Product, LineItem.Variant) != undefined">
+                    {{'Quantity Available' | r | xlat}}: {{inventoryDisplay(LineItem.Product, LineItem.Variant) }}
+                </span>
+                <span class="inventory" ng-show="!LineItem.Product.DisplayInventory">
+                </span>
+            </div>-->
+            <br/>
+            <span class="price" ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
+                {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
+            </span>
+            <a class="btn btn-success btn-sm" href="product/{{LineItem.Product.InteropID}}">{{('Add' | r) + ' ' + ('to' | r) + ' ' + ('Cart' | r) | xlat}}</a>
         </div>
     </div>
 </div>
