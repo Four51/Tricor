@@ -22,7 +22,7 @@ body  {background-color: #FFFFFF;}
 body  {color: #333333;}
 .text-primary  {color: #0C2A3A;}
 .text-info  {color: #31708F;}
-body a  {color: #0C2A3A;}
+body a, body a:hover  {color: #68549D;}
 .btn-primary  {background-color: #312A6E;}
 .btn-primary, .btn-primary:hover  {color: #FFFFFF;}
 .btn-primary  {border-color: #312A6E;}
@@ -39,14 +39,14 @@ body a  {color: #0C2A3A;}
 .btn-success, .btn-success:hover  {color: #FFFFFF;}
 .btn-success  {border-color: #4CAE4C;}
 .btn-success:hover  {background-color: #47A447;}
-.btn-warning  {background-color: #f0ad4e;}
-.btn-warning, .btn-warning:hover  {color: #FFFFFF;}
-.btn-warning  {border-color: #EEA236;}
-.btn-warning:hover  {background-color: #ED9C28;}
-.btn-danger  {background-color: #D9534F;}
+.btn-warning  {background-color: #ddd;}
+.btn-warning, .btn-warning:hover  {color: #525252;}
+.btn-warning  {border-color: #ddd;}
+.btn-warning:hover  {background-color: #ddd;}
+.btn-danger  {background-color: #777;}
 .btn-danger, .btn-danger:hover  {color: #FFFFFF;}
-.btn-danger  {border-color: #D43F3A;}
-.btn-danger:hover  {background-color: #D2322D;}
+.btn-danger  {border-color: #777;}
+.btn-danger:hover  {background-color: #777;}
 .jumbotron  {background-color: #68549d;}
 h2 .jumbotron  {color: #333333;}
 .panel-primary .panel-heading .panel-title  {background-color: #0C2A3A;}
