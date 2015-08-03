@@ -451,6 +451,15 @@ shortproductviewminimal .thumbnail img {
 
 .product-detail-default .product-details  {
     padding:0 15px;
+    width:50%;
+    float:left;
+}
+
+@media(max-width: 767px) {
+
+    .product-detail-default .product-details  {
+        width:100%;
+    }
 }
 
 .product-detail-default .product-details p {
