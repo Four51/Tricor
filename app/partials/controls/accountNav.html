@@ -9,6 +9,6 @@
         <button class="btn btn-default" ng-show="user.Type == 'Customer'" ng-class="{'active': isActive('order')}" redirect="/order">{{'Orders' | r}}</button>
         <button class="btn btn-default" ng-show="user.Type == 'Customer'" id="451qa_fave_link" ng-class="{'active': isActive('favoriteorders')}" redirect="/favoriteorders">{{'Favorites' | r}}</button>
         <button ng-if="AppConst.debug" href="#" class="btn btn-default" ng-click="Clear()">Clear Cache</button>
-        <button class="btn btn-danger 451_btn_logout" ng-click="Logout()" ng-if="user.Type=='Customer'"><i class="fa fa-power-off"></i> {{'Log Out' | r}}</button>
+        <!--<button class="btn btn-danger 451_btn_logout" ng-click="Logout()" ng-if="user.Type=='Customer'"><i class="fa fa-power-off"></i> {{'Log Out' | r}}</button>-->
     </span>
 </nav>
