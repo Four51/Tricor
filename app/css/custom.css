@@ -120,9 +120,9 @@ fieldset[disabled] .btn-primary.active {
     border-color: #312A6E;
 }
 
-/*.btn i {
+.btn i.fa-warning {
     display:none;
-}*/
+}
 
 .btn-danger.disabled, .btn-danger[disabled],
 fieldset[disabled] .btn-danger,
@@ -159,6 +159,15 @@ fieldset[disabled] .btn-danger.active {
     color: #525252;
     background-color: #ddd;;
     border-color: #ddd;;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+    background-color: #88B236;
+    border-color: #88B236;
 }
 
 .btn.disabled, .btn[disabled],
@@ -578,27 +587,30 @@ hr {
 }
 
 .cart orderbuttons .btn-info,
-.checkout orderbuttons .btn-info {
-    background-color:#4E3F88;
-}
-
+.checkout orderbuttons .btn-info,
 .cart orderbuttons .btn-info:hover,
 .checkout orderbuttons .btn-info:hover {
     background-color:#312a6e;
+    border-color:#312a6e;
 }
 
 .cart orderbuttons .btn-primary,
-.checkout orderbuttons .btn-primary {
-    background-color:#312A6E;
-}
-
+.checkout orderbuttons .btn-primary,
 .cart orderbuttons .btn-primary:hover,
 .checkout orderbuttons .btn-primary:hover {
-    background-color:#4E3F88;
+    background-color:#312A6E;
+    border-color:#312a6e;
 }
 
 .panel-order .btn-info,
 .panel-order .btn-info:hover {
+    background-color:#777;
+    border-color:#777;
+}
+
+.gift-card-redemption-view .btn-success,
+.gift-card-redemption-view .btn-success:hover,
+.gift-card-redemption-view .btn-success:focus {
     background-color:#777;
     border-color:#777;
 }
