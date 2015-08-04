@@ -12,7 +12,7 @@
                     <productlightbox></productlightbox>
                 </div>
                 <!--lightbox-->
-                <div ng-hide="StaticSpecGroups.LightboxImages.Specs" class="panel panel-default">
+                <!--<div ng-hide="StaticSpecGroups.LightboxImages.Specs" class="panel panel-default">
                     <div class="panel-body">
                         <loadingindicator ng-show="loadingImage && LineItem.Variant.IsMpowerVariant" />
                         <figure>
@@ -38,19 +38,15 @@
                                 </button>
                             </span>
                     </div>
-                </div>
+                </div>-->
         </div>
-
-        <div class="product-details" style="float:left; display:inline-block;">
+        <div class="product-details" ng-class="{'youth-shirt': LineItem.Product.Name == 'Youth T-Shirt'}">
             <!-- PRODUCT INFO!-->
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 id="451qa_prod_name" ng-hide="LineItem.Variant.ExternalID">
+                    <h2 id="451qa_prod_name">
                         {{LineItem.Product.Name}}
                     </h2>
-                   <!-- <h2 ng-show="LineItem.Variant.ExternalID">
-                        {{LineItem.Variant.ExternalID}}
-                    </h2>-->
                     <h2 class="text-success" ng-show="LineItem.PriceSchedule.PriceBreaks.length == 1" ng-if="!(user.Permissions.contains('HidePricing'))">
                         {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
                     </h2>
@@ -58,9 +54,6 @@
             </div>
             <!-- PRODUCT DESCRIPTION PANEL! --->
             <div>
-                <!--<h4 ng-show="LineItem.Product.ExternalID" class="text-info">
-                    {{'ID' | r | xlat}}: {{LineItem.Product.ExternalID}}
-                </h4>-->
                 <p id="451qa_prod_desc" ng-bind-html="trustedDescription(LineItem.Product)" />
                 <p ng-show="LineItem.Variant.Description" ng-bind-html="trustedDescription(LineItem.Variant)" />
                 <!-- PRICE SCHEDULE PANEL! --->
@@ -70,7 +63,6 @@
             <div>
                 <div ng-show="LineItem.Product.StaticSpecGroups.SizeCharts.Specs">
                     <a href="css/images/PuppetLabs/SizeCharts/{{LineItem.Product.ExternalID}}.jpg" target="_new">Size Chart</a><br />
-                   <!-- <a ng-href="{{LineItem.Product.StaticSpecGroups.SizeChart.Specs.1.FileURL}}" target="_new">Size Chart as Static Spec File</a>-->
                 </div>
             </div>
             <!-- PRODUCT SIZE CHART! --->
