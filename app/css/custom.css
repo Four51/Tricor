@@ -661,11 +661,6 @@ hr {
 .copyright-view a,
 .copyright-view a:hover {
     color: #777;
-    padding: 0 0 0 3px;
-}
-
-.copyright-view p.text-right {
-    padding: 0 75px 0 0;
 }
 
 .footer-wrapper {
@@ -673,7 +668,39 @@ hr {
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    line-height:1.5em;
 }
+
+.footer-wrapper .labels {
+    font-weight:bold;
+    float:left;
+    margin-right:30px;
+}
+
+.footer-wrapper .info {
+    float:left;
+}
+
+.copyright-view p.links {
+    padding: 0 75px 0 0;
+    text-align:right;
+}
+
+@media (max-width: 768px) {
+    .copyright-view p.links {
+        padding: 0;
+        text-align:center;
+    }
+}
+
+.copyright-view p.links a {
+    padding:0 4px 0 3px;
+}
+
+.copyright-view p.links a:nth-of-type(3) {
+    padding:0 0 0 3px;
+}
+
 
 .footer-wrapper div div {
     padding:0;
