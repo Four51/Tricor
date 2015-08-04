@@ -73,7 +73,13 @@ four51.app.controller('UserEditCtrl', ['$scope', '$location', '$sce', '$injector
             };
             $scope.loginExisting = function () {
                 User.login({Username: $scope.loginasuser.Username, Password: $scope.loginasuser.Password, ID: $scope.user.ID, Type: $scope.user.Type}, function (u) {
-                    if (_AnonRouter) _AnonRouter.route();
+                    //if (_AnonRouter) _AnonRouter.route();
+                    if ($scope.currentOrder) {
+                        $location.path('checkout');
+                    }
+                    if (!$scope.currentOrder) {
+                        $location.path('catalog');
+                    }
                 }, function (err) {
                     $scope.loginAsExistingError = err.Message;
                 });
