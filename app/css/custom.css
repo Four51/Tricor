@@ -307,10 +307,71 @@ fieldset[disabled] .btn-warning.active {
     margin-bottom:20px;
 }
 
+.navbar.navbar-hamburger {
+    min-height:40px;
+    max-height:40px;
+    background-color: #312a6e;
+    padding-bottom:10px;
+}
+
+.navbar-hamburger .col-collapse {
+    background-color:#fff;
+    color:#fff;
+}
+
+.navbar-hamburger i {
+    font-size: 1.8em;
+    left: 10px;
+    position: relative;
+    top: 10px;
+}
+
+ul.burgers {
+    background-color: #312a6e;
+}
+
+.navbar-hamburger a,
+ul.burgers li a {
+    color:#ffffff;
+    text-decoration:none;
+}
+
+.navbar-hamburger a:hover {
+    color:#68549d;
+    text-decoration:none;
+}
+
+ul.burgers li a {
+    background-color: #312a6e;
+    padding: 0.5em 0.75em;
+    width: 100%;
+}
+
+ul.burgers li a:hover {
+    color:#ffffff;
+    text-decoration:none;
+    background-color:#68549d;
+}
+
+ul.burgers li.login a,
+ul.burgers li.logout a {
+    margin-bottom:1px;
+}
+
+ul.burgers li.login a:hover,
+ul.burgers li.logout a:hover {
+    border-bottom:1px solid #312a6e;
+    margin-bottom:0;
+}
+/*nav*/
+
 /*branding*/
 .jumbotron {
+    clear:both;
     margin: 0 0 0;
-    height: 100px;
+    /*height: 100px;*/
+    min-height:100px;
+    max-height:100px;
     display: block;
     text-align: left;
 }
@@ -323,7 +384,6 @@ fieldset[disabled] .btn-warning.active {
     left:66px;
     bottom:16px;
 }
-
 
 @media(max-width: 768px) {
     .jumbotron h2 img {
@@ -401,7 +461,6 @@ fieldset[disabled] .btn-warning.active {
     margin-top: -20px;
     min-height: 40px;
     padding: 0;
-    word-break: keep-all;
 }
 
 .product-list-container .panel-product-list .inventory {
@@ -511,13 +570,11 @@ productmatrix .btn:hover {
 }
 /*should this get moved to matrix?*/
 
-
 /*contact*/
 .contact-request {
     color: #777;
     margin-top: -30px;
 }
-
 
 .contact-request label {
     font-size: 14px;
@@ -643,7 +700,6 @@ hr {
 @media (max-width: 768px) {
     .FAQ-wrapper {
         margin: -45px 75px 0;
-
     }
 }
 
