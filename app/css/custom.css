@@ -401,6 +401,7 @@ fieldset[disabled] .btn-warning.active {
     margin-top: -20px;
     min-height: 40px;
     padding: 0;
+    word-break: keep-all;
 }
 
 .product-list-container .panel-product-list .inventory {
@@ -423,7 +424,7 @@ fieldset[disabled] .btn-warning.active {
 /**/
 .product-detail-default .product-details  {
     padding:0;
-    width:50%;
+    width:43%;
     float:left;
     display:inline-block;
     position:relative;
