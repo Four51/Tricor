@@ -1,63 +1,55 @@
 <ul>
     <style ng-if="continue">
-        .cart orderbuttons ul li:nth-of-type(1) {
+        .cart orderbuttons ul li.continue,
+        .cart orderbuttons ul li.checkout {
             width: 33%;
-            padding-left:0.5em;
             display: inline-block;
         }
-        .cart orderbuttons ul li:nth-of-type(2) {
+        .cart orderbuttons ul li.guest,
+        .cart orderbuttons ul li.login-checkout {
             width: 17%;
-            padding-left:0.5em;
             display: inline-block;
             float: right;
         }
-        .cart orderbuttons ul li:nth-of-type(3) {
-            width: 17%;
-            padding-left:0.5em;
-            display: inline-block;
-            float: right;
+        .cart orderbuttons ul li.login-checkout {
+            padding-right:0.5em;
         }
-        .cart orderbuttons ul li:nth-of-type(4) {
-            width: 33%;
-            padding-left:0.5em;
-            display: inline-block;
-            float: right;
-        }
+
         .cart orderbuttons ul li a {
             padding-top: 9px;
             padding-bottom: 9px;
         }
 
         @media (max-width: 768px) {
-            .cart orderbuttons ul li:nth-of-type(1),
-            .cart orderbuttons ul li:nth-of-type(2),
-            .cart orderbuttons ul li:nth-of-type(3){
+            .cart orderbuttons ul li.continue,
+            .cart orderbuttons ul li.checkout,
+            .cart orderbuttons ul li.guest,
+            .cart orderbuttons ul li.login-checkout {
                 width:100%;
-                padding-bottom:10px;
+                padding:0 0.5em 3px 0.5em;
                 float:left;
             }
         }
     </style>
-    <li ng-if="continue">
+    <li ng-if="continue" class="continue">
         <button type="button" class="btn btn-info" redirect="catalog">
-            <small class="hidden-xs">{{'Continue Shopping' | r | xlat}}</small>
-            <small class="visible-xs">{{'Shop' | r | xlat}}</small>
+            <span>{{'Continue Shopping' | r | xlat}}</span>
         </button>
     </li>
-    <li>
-        <button type="button" class="btn" ng-class="{'btn-warning': cart.$invalid, 'btn-success': !cart.$invalid }" ng-if="user.Type == 'TempCustomer'" ng-click="checkOut()" ng-disabled="cart.$invalid || kitValidation">
+    <li class="guest">
+        <button ng-if="user.Type == 'TempCustomer'" type="button" class="btn" ng-class="{'btn-warning': cart.$invalid, 'btn-success': !cart.$invalid }" ng-click="checkOut()" ng-disabled="cart.$invalid || kitValidation">
             <i ng-show="cart.$invalid || kitValidation" class="fa fa-warning"></i>
             <span>{{'Guest Check Out' | r | xlat}} {{window.outerWidth}}</span>
         </button>
     </li>
-    <li>
-        <a type="button" class="btn" ng-class="{'btn-warning': cart.$invalid, 'btn-success': !cart.$invalid }" ng-if="user.Type == 'TempCustomer'" href="admin" ng-disabled="cart.$invalid || kitValidation">
+    <li class="login-checkout">
+        <a ng-if="user.Type == 'TempCustomer'" type="button" class="btn" ng-class="{'btn-warning': cart.$invalid, 'btn-success': !cart.$invalid }" href="admin" ng-disabled="cart.$invalid || kitValidation">
             <i ng-show="cart.$invalid || kitValidation" class="fa fa-warning"></i>
             <span>{{'Login / Check Out' | r | xlat}} {{window.outerWidth}}</span>
         </a>
     </li>
-    <li>
-        <button type="button" class="btn" ng-class="{'btn-warning': cart.$invalid, 'btn-success': !cart.$invalid }" ng-if="user.Type != 'TempCustomer'" ng-click="checkOut()" ng-disabled="cart.$invalid || kitValidation">
+    <li class="checkout">
+        <button ng-if="user.Type != 'TempCustomer'" type="button" class="btn" ng-class="{'btn-warning': cart.$invalid, 'btn-success': !cart.$invalid }" ng-click="checkOut()" ng-disabled="cart.$invalid || kitValidation">
             <i ng-show="cart.$invalid || kitValidation" class="fa fa-warning"></i>
             <span>{{'Check Out' | r | xlat}} {{window.outerWidth}}</span>
         </button>
