@@ -559,7 +559,7 @@ ul.burgers li.cart a:hover {
 }
 /*TRT-01803*/
 
-/*should this get moved to matrix?*/
+/*matrix*/
 .matrix {
     position:relative;
     top:-20px;
@@ -570,7 +570,26 @@ productmatrix .btn:hover {
     background-color:#88B236;
     border:1px solid #88B236;
 }
-/*should this get moved to matrix?*/
+
+productmatrix .btn-success.disabled,
+productmatrix .btn-success[disabled],
+productmatrix fieldset[disabled] .btn-success,
+productmatrix .btn-success.disabled:hover,
+productmatrix .btn-success[disabled]:hover,
+productmatrix fieldset[disabled] .btn-success:hover,
+productmatrix .btn-success.disabled:focus,
+productmatrix .btn-success[disabled]:focus,
+productmatrix fieldset[disabled] .btn-success:focus,
+productmatrix .btn-success.disabled:active,
+productmatrix .btn-success[disabled]:active,
+productmatrix fieldset[disabled] .btn-success:active,
+productmatrix .btn-success.disabled.active,
+productmatrix .btn-success.active[disabled],
+productmatrix fieldset[disabled] .btn-success.active {
+    background-color: #88B236;
+    border-color: #88B236;
+}
+/*matrix*/
 
 /*contact*/
 .contact-request {
