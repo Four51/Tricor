@@ -639,6 +639,12 @@ ul.galleryImages {
     border-bottom:0;
 }
 
+@media(max-width: 767px) {
+    .product-detail-default .panel-no-panels .panel-heading .panel-title {
+        padding: 20px 10px 0;
+    }
+}
+
 .product-detail-default .table-responsive tbody td {
     border: 1px solid #dddddd;
     font-size: 0.9em;
@@ -688,10 +694,6 @@ ul.galleryImages {
 .matrix-grid > div:last-of-type > div:not(.quantity) {
     padding: 5px;
 }
-
-/*.matrix-grid > div.quantity {
-    padding-top: 10px;
-}*/
 
 .matrix-grid > div:last-of-type > div input {
     text-align: center;
