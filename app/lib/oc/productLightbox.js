@@ -20,22 +20,6 @@ function productlightbox() {
 
     function template() {
         return [
-            '<style>',
-            '.galleryThumbs {width:100%;margin:0 auto;position: relative;}',
-            '.galleryThumbs li {padding: 3px 5px;list-style-type: none;display:inline-block;}',
-            '.galleryThumbs li:first-child {padding-left:0;}',
-            '.galleryThumbs .img-thumbnail {border:0 none; max-height:130px;max-width:90px; padding:0;border-radius:0}',
-            '.galleryThumbs .active .img-thumbnail {border:0 none}',
-            'ul.galleryImages {width:50%; float:left;}',
-            '@media(max-width: 767px) {ul.galleryImages {width:100%; float:left;} }',
-            '.galleryImages li {list-style-type:none;}',
-            '.galleryImages a {display:block;}',
-            '.galleryImages a.no-click {cursor:none;pointer-events: none;}',
-            '.galleryImages .product-image-large {display:none;}',
-            '.galleryImages .active .product-image-large {display:block !important;max-height:500px;max-width:350px;position:relative;top:0;}',
-            '@media(max-width: 767px) {.galleryImages .active .product-image-large {width:100%;height:auto;} }',
-            '.panel .panel-footer { border:0 none; background:transparent;padding: 0 16px;}',
-            '</style>',
             '<div class="panel-body">',
             '<ul class="galleryImages">',
             '<li ng-repeat="image in LineItem.images">',
