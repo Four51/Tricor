@@ -2,14 +2,16 @@
 Static file for Theme changes
 Theme name: Tricor - Puppet Labs
 Version: 1.0
-Last Updated: 8/18/15
+Last Updated: 8/20/15
 Developers: Miranda, Jen, Max
 
 Brand Colors:
 
 lt purple #4E3F88
 dk purple #312a6e
-gray #5E5E5E
+grays
+ #777
+ #5E5E5E
 lt green #88B236
 */
 
@@ -127,10 +129,14 @@ fieldset[disabled] .btn-primary.active {
     border-color: #312A6E;
 }
 
-.btn i.fa-warning,
+/*.btn i.fa-warning,
 .checkout i.fa-warning,
 .checkout i.fa-exclamation-circle {
     display:none;
+}*/
+
+.panel-order .panel-heading.no i:first-of-type {
+    color: #777;
 }
 
 .btn-danger.disabled, .btn-danger[disabled],
