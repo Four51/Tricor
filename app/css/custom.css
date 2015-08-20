@@ -689,7 +689,6 @@ hr {
 .cart orderbuttons .btn,
 .checkout orderbuttons .btn {
     width:100%;
-    float:left;
 }
 
 .cart orderbuttons .btn-info,
