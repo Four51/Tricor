@@ -5,10 +5,10 @@ try {
 catch(ex){}
 four51.app.controller('UserEditCtrl', ['$scope', '$location', '$sce', '$injector', 'User',
     function ($scope, $location, $sce, $injector, User) {
-        var _AnonRouter;
+        //var _AnonRouter;
         $scope.existingUser = $scope.user.Type != 'TempCustomer';
         try {
-            _AnonRouter = $injector.get('AnonRouter');
+            //_AnonRouter = $injector.get('AnonRouter');
         }
         catch(ex){}
 
