@@ -841,7 +841,7 @@ hr {
 
 /*faq*/
 .FAQ-wrapper {
-    margin: -45px 180px 0;
+    padding:0 15px;
 }
 
 .FAQ-wrapper p {
@@ -852,19 +852,7 @@ hr {
 .FAQ-wrapper p a {
     color: #4E3F88;
 }
-
-@media (min-width: 768px) {
-    .FAQ-wrapper {
-        margin: -45px 180px 0;
-
-    }
-}
-
-@media (max-width: 768px) {
-    .FAQ-wrapper {
-        margin: -45px 75px 0;
-    }
-}
+/*faq*/
 
 /*footer*/
 .copyright-view {
