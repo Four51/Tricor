@@ -585,6 +585,7 @@ ul.galleryImages {
     padding: 0 16px;
 }
 /*lightbox*/
+
 /**/
 .product-detail-default .product-details.youth-shirt  {
     padding:0;
@@ -658,6 +659,10 @@ ul.galleryImages {
     color:#777;
 }
 /*TRT-01803*/
+
+.product-detail-default .view-form-icon .quantity div {
+    margin: 10px 0;
+}
 
 /*matrix*/
 .matrix {
