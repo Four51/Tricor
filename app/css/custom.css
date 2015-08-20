@@ -735,7 +735,7 @@ productmatrix fieldset[disabled] .btn-success.active {
 /*contact*/
 .contact-request {
     color: #777;
-    margin-top: -30px;
+    padding:0 15px;
 }
 
 .contact-request label {
