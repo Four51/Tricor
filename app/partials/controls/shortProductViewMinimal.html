@@ -11,7 +11,10 @@
     </div>
     <div class="col-xs-12 text-left">
         <div class="panel-body">
-            <h3>{{LineItem.Product.Name}}</h3>
+            <!--TRT-01898 Product Name wrapping in Chrome-->
+            <h3 ng-show="!LineItem.Product.NameModify">{{LineItem.Product.Name}}</h3>
+            <h3 ng-show="LineItem.Product.NameModify">{{LineItem.Product.newName}}<span>T-Shirt</span></h3>
+            <!--TRT-01898 Product Name wrapping in Chrome-->
             <br/>
             <span class="price" ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
                 {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}

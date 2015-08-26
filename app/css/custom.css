@@ -2,7 +2,7 @@
 Static file for Theme changes
 Theme name: Tricor - Puppet Labs
 Version: 1.0
-Last Updated: 8/20/15
+Last Updated: 8/26/15
 Developers: Miranda, Jen, Max
 
 Brand Colors:
@@ -129,11 +129,11 @@ fieldset[disabled] .btn-primary.active {
     border-color: #312A6E;
 }
 
-/*.btn i.fa-warning,
+.btn i.fa-warning,
 .checkout i.fa-warning,
 .checkout i.fa-exclamation-circle {
     display:none;
-}*/
+}
 
 .panel-order .panel-heading.no i:first-of-type {
     color: #777;
@@ -466,9 +466,13 @@ ul.burgers li.cart a:hover {
     color: #5e5e5e;
     font-size: 13px;
     line-height: 20px;
-    margin-top: -20px;
     min-height: 40px;
     padding: 0;
+    margin:-20px 0 5px 0;
+}
+
+.panel-product-list ul li.inline h3 span {
+    white-space:nowrap;
 }
 
 .product-list-container .panel-product-list .inventory {
@@ -582,7 +586,7 @@ ul.galleryImages {
 .panel .panel-footer {
     border:0 none;
     background:transparent;
-    padding: 0 16px;
+    /*padding: 0 16px; mreh*/
 }
 /*lightbox*/
 
