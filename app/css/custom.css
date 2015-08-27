@@ -16,8 +16,15 @@ lt green #88B236
 */
 
 orderhistorydetails .text-info,
-orderhistorysummary .text-info {
+orderhistorysummary .text-info,
+.panel-order-history .text-info,
+.order-search-view label {
     color:#4E3F88;
+    font-weight:normal;
+}
+
+label, label.required {
+    color:#777;
 }
 
 .order-search-view .view-form-icon > div:not(.panel-heading) {
@@ -65,10 +72,6 @@ h4, .h4 {
 .app-loading-indicator-cell p {
     background-color: #4E3F88;
     color:#fff;
-}
-
-label, label.required {
-    color:#777;
 }
 
 input.ng-invalid,
