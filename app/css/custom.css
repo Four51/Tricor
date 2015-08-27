@@ -15,6 +15,11 @@ grays
 lt green #88B236
 */
 
+orderhistorydetails .text-info,
+orderhistorysummary .text-info {
+    color:#4E3F88;
+}
+
 html {
     -webkit-font-smoothing: antialiased;
 }
