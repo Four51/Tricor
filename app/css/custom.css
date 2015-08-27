@@ -27,6 +27,14 @@ label, label.required {
     color:#777;
 }
 
+span.required {
+    font-size:85%;
+    color:#312a6e;
+    font-style:oblique;
+    font-weight:bold;
+    margin-left:5px;
+}
+
 .order-search-view .view-form-icon > div:not(.panel-heading) {
     margin: 35px 10px 0 0;
 }
