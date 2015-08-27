@@ -15,10 +15,16 @@ grays
 lt green #88B236
 */
 
+.alert-success {
+    background-color: #88B236;
+    border-color: #cccccc;
+    color: #fff;
+}
+
 orderhistorydetails .text-info,
 orderhistorysummary .text-info,
 .panel-order-history .text-info,
-.order-search-view label {
+.order-search-view .text-info {
     color:#4E3F88;
     font-weight:normal;
 }
