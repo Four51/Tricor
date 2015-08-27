@@ -20,6 +20,10 @@ orderhistorysummary .text-info {
     color:#4E3F88;
 }
 
+.order-search-view .view-form-icon > div:not(.panel-heading) {
+    margin: 35px 10px 0 0;
+}
+
 html {
     -webkit-font-smoothing: antialiased;
 }
