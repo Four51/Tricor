@@ -33,15 +33,19 @@ function SameAsShippingCheckboxCtrl($scope, $rootScope) {
     $scope.resetBilling = function() {
         if ($scope.copyShipAddress == true) {
             $scope.BillAddress = $scope.orderShipAddress;
-            $scope.BillAddressID = $scope.currentOrder.ShipAddressID;
-            $scope.currentOrder.BillAddressID = $scope.currentOrder.ShipAddressID;
+            if ($scope.currentOrder) {
+                $scope.BillAddressID = $scope.currentOrder.ShipAddressID;
+                $scope.currentOrder.BillAddressID = $scope.currentOrder.ShipAddressID;
+            }
             $scope.BillAddress.IsBilling = true;
             $scope.billaddresses.push($scope.BillAddress);
         }
         if ($scope.copyShipAddress == false) {
             $scope.BillAddress = '';
             $scope.BillAddressID = '';
-            $scope.currentOrder.BillAddressID = '';
+            if ($scope.currentOrder) {
+                $scope.currentOrder.BillAddressID = '';
+            }
         }
     };
 
@@ -53,7 +57,7 @@ function SameAsShippingCheckboxCtrl($scope, $rootScope) {
     });
 
     $scope.$watch('currentOrder.BillAddressID', function(newValue) {
-        if (newValue != $scope.currentOrder.ShipAddressID) {
+        if ($scope.currentOrder && (newValue != $scope.currentOrder.ShipAddressID)) {
             $scope.copyShipAddress = false;
         }
     });
@@ -62,6 +66,5 @@ function SameAsShippingCheckboxCtrl($scope, $rootScope) {
         $scope.copyShipAddress = false;
         $scope.BillAddress = null;
         $scope.BillAddressID = '';
-        $scope.currentOrder.BillAddressID = '';
     });
 }
