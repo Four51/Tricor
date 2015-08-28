@@ -17,10 +17,6 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, User, Orde
 	$scope.checkOutSection = $scope.hasOrderConfig ? 'order' : 'shipping';
 
 
-	if ($scope.user.Type == 'TempCustomer') {
-		// set current order variables
-	}
-
     function submitOrder() {
 
 		$scope.showErrors = false;
@@ -31,6 +27,16 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, User, Orde
 			$scope.displayLoadingIndicator = true;
 			$scope.errorMessage = null;
 
+			if ($scope.user.Type == 'TempCustomer') {
+				$scope.user.Email = $scope.user.guestEmail;
+				$scope.user.FirstName = 'Guest';
+				$scope.user.LastName = 'User';
+				User.save($scope.user, function(u) {
+					$scope.user = u;
+					$scope.displayLoadingIndicator = false;
+				});
+			}
+			
 			Order.submit($scope.currentOrder,
 				function(data) {
 					if ($scope.user.Company.GoogleAnalyticsCode) {
@@ -38,15 +44,12 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, User, Orde
 					}
 					if ($scope.user.Type == 'TempCustomer') {
 						$scope.user.ConvertFromTempUser = true;
-						$scope.user.Email = $scope.user.guestEmail;
-						$scope.user.FirstName = 'Guest';
-						$scope.user.LastName = 'User';
 						var randomGUID = Math.floor((1 + Math.random()) * 0x10000);
 						$scope.user.Username = $scope.user.FirstName + $scope.user.LastName + randomGUID;
 						$scope.user.Password = $scope.user.FirstName + $scope.user.LastName + randomGUID;
 						$scope.user.ConfirmPassword = $scope.user.FirstName + $scope.user.LastName + randomGUID;
 					}
-					$scope.user.CurrentOrderID = null;
+					//$scope.user.CurrentOrderID = null;
 					User.save($scope.user, function(u) {
 						$scope.user = u;
 						$scope.displayLoadingIndicator = false;
