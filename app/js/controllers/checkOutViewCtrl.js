@@ -36,7 +36,8 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, User, Orde
 					$scope.displayLoadingIndicator = false;
 				});
 			}
-			
+
+
 			Order.submit($scope.currentOrder,
 				function(data) {
 					if ($scope.user.Company.GoogleAnalyticsCode) {
@@ -44,6 +45,7 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, User, Orde
 					}
 					if ($scope.user.Type == 'TempCustomer') {
 						$scope.user.ConvertFromTempUser = true;
+						$scope.currentOrder.ExternalOrderDetailRecipients = $scope.user.Email;
 						var randomGUID = Math.floor((1 + Math.random()) * 0x10000);
 						$scope.user.Username = $scope.user.FirstName + $scope.user.LastName + randomGUID;
 						$scope.user.Password = $scope.user.FirstName + $scope.user.LastName + randomGUID;
