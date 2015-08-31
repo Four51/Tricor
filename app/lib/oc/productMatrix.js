@@ -17,6 +17,9 @@ function productmatrix() {
 
     function template() {
         return [
+            '<div class="panel panel-no-panels">',
+            '<div class="panel-body">',
+            '<form name="addVariantsToOrderForm" ng-submit="addVariantsToOrder()">',
             '<div class="matrix">',
             '<loadingindicator ng-show="matrixLoadingIndicator" />',
             '<div ng-repeat="group in comboVariants" ng-show="specCount == 2 && (group | filter:{Show: true}).length > 0">',
@@ -53,8 +56,11 @@ function productmatrix() {
             '</div>',
             '</div>',
             '<div class="alert alert-danger" style="margin-top:20px;" ng-show="qtyError" ng-bind-html="qtyError"></div>',
-            '<button class="btn btn-success btn-block btn-lg" type="button" id="451_btn_orderadd" ng-disabled="qtyError " ng-click="addVariantsToOrder()">',
+            '<button class="btn btn-success btn-block btn-lg" type="submit" id="451_btn_orderadd">',
             '<loadingindicator ng-show="addToOrderIndicator" /><i ng-show="qtyError" class="fa fa-warning"></i> {{addToOrderText | r}}</button>',
+            '</div>',
+            '</form>',
+            '</div>',
             '</div>'
         ].join('');
     }
@@ -120,47 +126,52 @@ function ProductMatrixCtrl($scope, $routeParams, $location, ProductDisplayServic
 
     $scope.addVariantsToOrder = function(){
 
-        /*$scope.qtyError = "";
-
-        ProductMatrix.validateQuantity($scope.comboVariants, $scope.product, function(message) {
+        $scope.qtyError = "";
+        ProductMatrix.validateQuantity($scope.comboVariants, $scope.product, function (message) {
             $scope.qtyError = "<p>Please select a valid quantity</p>";
             //$scope.qtyError = message; //this shows all of the messages for each vboss variant
-        });*/
+        });
 
-
-        if(!$scope.currentOrder){
-            $scope.currentOrder = {};
-            $scope.currentOrder.LineItems = [];
+        if ($scope.qtyError) {
+            alert('Please enter a quantity.');
         }
 
-        if (!$scope.lineItemIndex) {
-            ProductMatrix.addToOrder($scope.comboVariants, $scope.product, function(lineItems) {
-                $scope.addToOrderIndicator = true;
-                angular.forEach(lineItems, function(li) {
-                    $scope.currentOrder.LineItems.push(li);
-                });
-                saveOrder($scope.currentOrder);
-            });
-        }
         else {
-            $scope.addToOrderIndicator = true;
-            if ($scope.specCount == 1) {
-                angular.forEach($scope.comboVariants, function(variant) {
-                    if (variant[0].Quantity) {
-                        $scope.currentOrder.LineItems[$scope.lineItemIndex].Quantity = variant[0].Quantity;
-                    }
+
+            if (!$scope.currentOrder) {
+                $scope.currentOrder = {};
+                $scope.currentOrder.LineItems = [];
+            }
+
+            if (!$scope.lineItemIndex) {
+                ProductMatrix.addToOrder($scope.comboVariants, $scope.product, function (lineItems) {
+                    $scope.addToOrderIndicator = true;
+                    angular.forEach(lineItems, function (li) {
+                        $scope.currentOrder.LineItems.push(li);
+                    });
+                    saveOrder($scope.currentOrder);
                 });
-                saveOrder($scope.currentOrder);
             }
             else {
-                angular.forEach($scope.comboVariants, function(group) {
-                    angular.forEach(group, function(variant) {
-                        if (variant.Quantity) {
-                            $scope.currentOrder.LineItems[$scope.lineItemIndex].Quantity = variant.Quantity;
+                $scope.addToOrderIndicator = true;
+                if ($scope.specCount == 1) {
+                    angular.forEach($scope.comboVariants, function (variant) {
+                        if (variant[0].Quantity) {
+                            $scope.currentOrder.LineItems[$scope.lineItemIndex].Quantity = variant[0].Quantity;
                         }
                     });
-                });
-                saveOrder($scope.currentOrder);
+                    saveOrder($scope.currentOrder);
+                }
+                else {
+                    angular.forEach($scope.comboVariants, function (group) {
+                        angular.forEach(group, function (variant) {
+                            if (variant.Quantity) {
+                                $scope.currentOrder.LineItems[$scope.lineItemIndex].Quantity = variant.Quantity;
+                            }
+                        });
+                    });
+                    saveOrder($scope.currentOrder);
+                }
             }
         }
     };

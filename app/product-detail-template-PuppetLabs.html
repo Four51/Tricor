@@ -5,7 +5,7 @@
     <productnav product="LineItem.Product" variant="LineItem.Variant" />
     <!-- PRODUCT IMAGE PANEL!-->
     <div class="col-xs-12 col-md-8">
-        <div style="float:left;">
+        <div class="pull-left">
 
                 <!--lightbox-->
                 <div ng-show="StaticSpecGroups.LightboxImages.Specs" class="panel panel-no-panels" ng-controller="LightboxCtrl">
@@ -72,7 +72,7 @@
         <!-- STATIC SPECS PANEL! -->
         <staticspecstable ng-show="StaticSpecGroups && user.Permissions.contains('ViewNonCustomizableSpecs')" specgroups="StaticSpecGroups" length="LineItem.Product.StaticSpecLength"/>
         <!-- ORDER PANEL! -->
-        <form name="addToOrderForm" novalidate="">
+        <form name="addToOrderForm" ng-submit="addToOrder()">
             <div class="panel panel-no-panels">
                 <div class="panel-heading" ng-if="allowAddToOrder">
                     <h3 class="panel-title">
@@ -170,7 +170,7 @@
                                     <quantityfield required="true" lineitem="LineItem" class="quantity" />
                                 </div>
                             </div>
-                            <button class="btn btn-success btn-block btn-lg" type="button" id="451_btn_orderadd" ng-click="addToOrder()">
+                            <button class="btn btn-success btn-block btn-lg" type="submit" id="451_btn_orderadd">
                                 <loadingindicator ng-show="addToOrderIndicator" />
                                 <i ng-show="lineItemErrors.length > 0" class="fa fa-warning"></i>
                                 {{addToOrderText | r | xlat}}
@@ -182,28 +182,34 @@
                     </div>
                     <!-- non matrix -->
 
-                    <!--matrix-->
-                    <div ng-if="LineItem.Product.SpecCount > 0">
-                        <div id="451_list_vspec">
-                            <div class="form-group" ng-repeat="s in LineItem.Specs | definesvariant | onproperty:[{Property: 'CanSetForLineItem', Value: true}]">
-                                <customfilefield customfield="s" ng-if="s.ControlType == 'File'"></customfilefield>
-                                <customtextfield customfield="s" ng-if="s.ControlType == 'Text'"></customtextfield>
-                                <customselectionfield change="specChanged" customfield="s" ng-if="s.ControlType == 'Selection'"></customselectionfield>
-                            </div>
-                        </div>
-                        <productmatrix></productmatrix>
-                    </div>
-                    <!--matrix-->
+                    <!--matrix moved to outside of this form for validation-->
 
                 </div><!--.panel-body-->
             </div><!--.panel.no-panels-->
         </form>
+
+
+        <!--matrix-->
+        <div ng-if="LineItem.Product.SpecCount > 0">
+            <div id="451_list_vspec">
+                <div class="form-group" ng-repeat="s in LineItem.Specs | definesvariant | onproperty:[{Property: 'CanSetForLineItem', Value: true}]">
+                    <customfilefield customfield="s" ng-if="s.ControlType == 'File'"></customfilefield>
+                    <customtextfield customfield="s" ng-if="s.ControlType == 'Text'"></customtextfield>
+                    <customselectionfield change="specChanged" customfield="s" ng-if="s.ControlType == 'Selection'"></customselectionfield>
+                </div>
+            </div>
+            <productmatrix></productmatrix>
+        </div>
+        <!--matrix-->
+
+
         <!-- RELATED PRODUCTS! -->
         <relatedproducts ng-if="LineItem.Product.RelatedProductsGroupID" relatedgroupid="LineItem.Product.RelatedProductsGroupID" />
     </div>
     <!-- ERROR MESSAGING! -->
-    <div class="navbar-fixed-bottom">
-        <div class="view-error-message" ng-show="showAddToCartErrors && lineItemErrors.length > 0">
+    <div ng-show="showErrors">
+        <!--<div class="view-error-message" ng-show="showAddToCartErrors && lineItemErrors.length > 0">-->
+        <div class="view-error-message">
             <ul class="alert-warning">
                 <li class="text-center">
                     <span class="badge">

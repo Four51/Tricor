@@ -16,12 +16,22 @@
             </div>
             <div class="panel-body">
                 <div class="col-md-6 col-md-offset-3">
-                    <label>{{'Username' | r | xlat}}</label><input name="username" class="form-control" type="text" ng-model="loginasuser.Username" autocomplete="off" required placeholder="{{'Username' | r | xlat}}" /><br />
-                    <label>{{'Password' | r | xlat}}</label><input name="password" class="form-control" type="password" ng-model="loginasuser.Password" autocomplete="off" required placeholder="{{'Password' | r | xlat}}" /><br />
+                    <div class="view-form-icon">
+                        <div>
+                            <label>{{'Username' | r | xlat}}</label>
+                            <input name="username" class="form-control" type="text" required ng-model="loginasuser.Username" autocomplete="off" placeholder="{{'Username' | r | xlat}}" />
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div>
+                            <label>{{'Password' | r | xlat}}</label>
+                            <input name="password" class="form-control" type="password" required ng-model="loginasuser.Password" autocomplete="off" placeholder="{{'Password' | r | xlat}}" />
+                            <i class="fa fa-lock"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="panel-footer">
-                <input class="btn btn-medium btn-primary" type="submit" ng-disabled="login_existing.$invalid" id="451_btn_login_existing" value="{{'Logon' | r | xlat}}" />
+                <input class="btn btn-medium btn-primary" type="submit" id="451_btn_login_existing" value="{{'Logon' | r | xlat}}" />
                 <inlineerror ng-show="loginAsExistingError" title="{{loginAsExistingError}}" />
             </div>
         </div>
@@ -35,11 +45,15 @@
                     <h3 class="panel-title">{{'Lost login information' | r | xlat}}</h3>
                 </div>
                 <div class="panel-body">
-                    <label>{{'Email' | r | xlat}}</label>
-                    <input name="username" required class="form-control" type="text" ng-model="loginasuser.Email" autocomplete="off" placeholder="{{'Email' | r | xlat}}" />
-                    <br/>
+                    <div class="view-form-icon">
+                        <div>
+                            <label>{{'Email' | r | xlat}}</label>
+                            <input name="username" required class="form-control" type="text" ng-model="loginasuser.Email" autocomplete="off" placeholder="{{'Email' | r | xlat}}" />
+                            <i class="fa fa-envelope-o"></i>
+                        </div>
+                    </div>
                     <div class="panel-footer">
-                        <input class="btn btn-medium btn-primary" type="submit" ng-disabled="login_help.$invalid" id="451_btn_login_existing" value="{{'Reset' | r | xlat}}" />
+                        <input class="btn btn-medium btn-primary" type="submit" id="451_btn_login_existing" value="{{'Reset' | r | xlat}}" />
                         <div class="view-inline-error" style="text-align: left" ng-show="resetPasswordError" ng-bind-html="resetPasswordError" />
                     </div>
                 </div>
@@ -54,25 +68,37 @@
                 </div>
                 <div class="panel-body">
                     <p class="alert-warning">{{'An email was sent with your username and verification code.' | r | xlat}}</p>
-                    <div class="row">
-                        <label>{{'Username' | r | xlat}}</label>
-                        <input required name="username" class="form-control" type="text" ng-model="loginasuser.UserName" autocomplete="off" placeholder="{{'Username' | r | xlat}}" />
+                    <div class="view-form-icon">
+                        <div>
+                            <label>{{'Username' | r | xlat}}</label>
+                            <input required name="username" class="form-control" type="text" ng-model="loginasuser.UserName" autocomplete="off" placeholder="{{'Username' | r | xlat}}" />
+                            <i class="fa fa-user"></i>
+                        </div>
                     </div>
-                    <div class="row">
-                        <label>{{'Verification code from email' | r | xlat}}</label>
-                        <input required name="token" class="form-control" type="text" ng-model="loginasuser.PasswordResetToken" autocomplete="off" placeholder="{{'Verification Code' | r | xlat}}" />
+                    <div class="view-form-icon">
+                        <div>
+                            <label>{{'Verification code from email' | r | xlat}}</label>
+                            <input required name="token" class="form-control" type="text" ng-model="loginasuser.PasswordResetToken" autocomplete="off" placeholder="{{'Verification Code' | r | xlat}}" />
+                            <i class="fa fa-inbox"></i>
+                        </div>
                     </div>
-                    <div class="row">
-                        <label>New {{'Password' | r}}</label>
-                        <input required class="form-control" name="new_password" type="password" ng-model="loginasuser.NewPassword" placeholder="New {{'Password' | r}}" />
+                    <div class="view-form-icon">
+                        <div>
+                            <label>New {{'Password' | r}}</label>
+                            <input required class="form-control" name="new_password" type="password" ng-model="loginasuser.NewPassword" placeholder="New {{'Password' | r}}" />
+                            <i class="fa fa-lock"></i>
+                        </div>
                     </div>
-                    <div class="row">
-                        <label>Confirm {{'Password' | r}}</label>
-                        <input required class="form-control" name="confirm_password" type="password" ng-model="loginasuser.ConfirmPassword"  placeholder="Confirm {{'Password' | r}}" ng-match="loginasuser.NewPassword" />
-                        <inlineerror ng-show="resetbytoken.confirm_password.$error.match" title="{{'Password' | r}}s do not match!" /><br />
+                    <div class="view-form-icon">
+                        <div>
+                            <label>Confirm {{'Password' | r}}</label>
+                            <input required class="form-control" name="confirm_password" type="password" ng-model="loginasuser.ConfirmPassword" ng-match="loginasuser.NewPassword" placeholder="Confirm {{'Password' | r}}" />
+                            <i class="fa fa-lock"></i>
+                            <inlineerror ng-show="resetbytoken.confirm_password.$error.match" title="{{'Password' | r}}s do not match!" />
+                        </div>
                     </div>
-                    <div xclass="panel-footer">
-                        <input class="btn btn-medium btn-primary" type="submit" ng-disabled="resetbytoken.$invalid" value="{{'Reset' | r | xlat}}" />
+                    <div class="panel-footer">
+                        <input class="btn btn-medium btn-primary" type="submit" value="{{'Reset' | r | xlat}}" />
                         <div class="view-inline-error" style="text-align: left" ng-show="resetPasswordError" ng-bind-html="resetPasswordError" />
                     </div>
                 </div>
@@ -106,7 +132,7 @@
                         <label class="required">{{'Email' | r | xlat}}</label>
                         <input name="email" class="form-control" type="email" ng-model="user.Email" required placeholder="{{'Email' | r | xlat}}" autocomplete="off" />
                         <i class="fa fa-envelope-o"></i>
-                        <inlineerror ng-show="user_form.email.$invalid" title="{{'Please enter a valid' + ' ' +  ('Email' | rl) + ' ' + ('Address' | rl) | xlat}}" />
+                        <!--<inlineerror ng-show="user_form.email.$invalid" title="{{'Please enter a valid' + ' ' +  ('Email' | rl) + ' ' + ('Address' | rl) | xlat}}" />-->
                     </div>
                 </div>
                 <div class="col-sm-6 view-form-icon">
@@ -163,7 +189,7 @@
                 </div>
             </div>
             <div class="panel-footer text-center">
-                <input class="btn btn-primary pull-right" type="submit" ng-disabled="user_form.$invalid" id="451_btn_user" value="{{(user.Type == 'TempCustomer' ? 'Create Account' : 'Save') | xlat}}" />
+                <input class="btn btn-primary pull-right" type="submit" id="451_btn_user" value="{{(user.Type == 'TempCustomer' ? 'Create Account' : 'Save') | xlat}}" />
                 <span class="alert alert-success" ng-show="actionMessage" ng-bind-html="actionMessage | r | xlat"></span>
             </div>
         </div>
