@@ -34,38 +34,63 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, User, Orde
 				User.save($scope.user, function(u) {
 					$scope.user = u;
 					$scope.displayLoadingIndicator = false;
+					submit();
 				});
 			}
 
-
-			Order.submit($scope.currentOrder,
-				function(data) {
-					if ($scope.user.Company.GoogleAnalyticsCode) {
-						GoogleAnalytics.ecommerce(data, $scope.user);
-					}
-					if ($scope.user.Type == 'TempCustomer') {
-						$scope.user.ConvertFromTempUser = true;
-						$scope.currentOrder.ExternalOrderDetailRecipients = $scope.user.Email;
-						var randomGUID = Math.floor((1 + Math.random()) * 0x10000);
-						$scope.user.Username = $scope.user.FirstName + $scope.user.LastName + randomGUID;
-						$scope.user.Password = $scope.user.FirstName + $scope.user.LastName + randomGUID;
-						$scope.user.ConfirmPassword = $scope.user.FirstName + $scope.user.LastName + randomGUID;
-					}
-					//$scope.user.CurrentOrderID = null;
-					User.save($scope.user, function(u) {
-						$scope.user = u;
+			else {
+				Order.submit($scope.currentOrder,
+					function(data) {
+						if ($scope.user.Company.GoogleAnalyticsCode) {
+							GoogleAnalytics.ecommerce(data, $scope.user);
+						}
+						$scope.user.CurrentOrderID = null;
+						User.save($scope.user, function(u) {
+							$scope.user = u;
+							$scope.displayLoadingIndicator = false;
+						});
+						$scope.currentOrder = null;
+						$location.path('/order/' + data.ID);
+					},
+					function(ex) {
+						$scope.errorMessage = ex.Message;
 						$scope.displayLoadingIndicator = false;
-					});
-					$scope.currentOrder = null;
-					$location.path('/order/' + data.ID);
-				},
-				function(ex) {
-					$scope.errorMessage = ex.Message;
-					$scope.displayLoadingIndicator = false;
-					$scope.shippingUpdatingIndicator = false;
-					$scope.shippingFetchIndicator = false;
-				}
-			);
+						$scope.shippingUpdatingIndicator = false;
+						$scope.shippingFetchIndicator = false;
+					}
+				);
+			}
+
+			function submit() {
+				Order.submit($scope.currentOrder,
+					function(data) {
+						if ($scope.user.Company.GoogleAnalyticsCode) {
+							GoogleAnalytics.ecommerce(data, $scope.user);
+						}
+						if ($scope.user.Type == 'TempCustomer') {
+							$scope.user.ConvertFromTempUser = true;
+							$scope.currentOrder.ExternalOrderDetailRecipients = $scope.user.Email;
+							var randomGUID = Math.floor((1 + Math.random()) * 0x10000);
+							$scope.user.Username = $scope.user.FirstName + $scope.user.LastName + randomGUID;
+							$scope.user.Password = $scope.user.FirstName + $scope.user.LastName + randomGUID;
+							$scope.user.ConfirmPassword = $scope.user.FirstName + $scope.user.LastName + randomGUID;
+						}
+						$scope.user.CurrentOrderID = null;
+						User.save($scope.user, function(u) {
+							$scope.user = u;
+							$scope.displayLoadingIndicator = false;
+						});
+						$scope.currentOrder = null;
+						$location.path('/order/' + data.ID);
+					},
+					function(ex) {
+						$scope.errorMessage = ex.Message;
+						$scope.displayLoadingIndicator = false;
+						$scope.shippingUpdatingIndicator = false;
+						$scope.shippingFetchIndicator = false;
+					}
+				);
+			}
 		}
 
 		else {
