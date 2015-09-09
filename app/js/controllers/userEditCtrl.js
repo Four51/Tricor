@@ -1,16 +1,11 @@
-var _AnonRouter;
-try {
-    _AnonRouter = $injector.get('AnonRouter');
-}
-catch(ex){}
 four51.app.controller('UserEditCtrl', ['$scope', '$location', '$sce', '$injector', 'User',
     function ($scope, $location, $sce, $injector, User) {
         //var _AnonRouter;
         $scope.existingUser = $scope.user.Type != 'TempCustomer';
-        try {
-            //_AnonRouter = $injector.get('AnonRouter');
+       /* try {
+            _AnonRouter = $injector.get('AnonRouter');
         }
-        catch(ex){}
+        catch(ex){}*/
 
         User.get(function(user) {
             $scope.user = user;
@@ -21,8 +16,6 @@ four51.app.controller('UserEditCtrl', ['$scope', '$location', '$sce', '$injector
             if ($scope.user.Type != 'TempCustomer')
                 $scope.user.TempUsername = $scope.user.Username;
             $scope.getToken = function () {
-                $scope.showErrors = false;
-
                     $scope.loginasuser.SendVerificationCodeByEmail = true;
                     $scope.emailResetLoadingIndicator = true;
                     User.login($scope.loginasuser, function () {
@@ -36,84 +29,65 @@ four51.app.controller('UserEditCtrl', ['$scope', '$location', '$sce', '$injector
                         });
 
             }
+
             $scope.resetWithToken = function () {
-
-                $scope.showErrors = false;
-                if ($scope.resetbytoken.$invalid) {
-                    $scope.showErrors = true;
-                }
-
-                else {
-                    $scope.showErrors = false;
-                    $scope.emailResetLoadingIndicator = true;
-                    User.reset($scope.loginasuser, function (user) {
-                            delete $scope.loginasuser;
-                            $location.path('catalog');
-                        },
-                        function (err) {
-                            $scope.emailResetLoadingIndicator = false;
-                            $scope.resetPasswordError = $sce.trustAsHtml(err.Message);
-                        });
-                }
-            }
-            $scope.save = function () {
-
-                $scope.showErrors = false;
-                if ($scope.user_form.$invalid) {
-                    $scope.showErrors = true;
-                }
-
-                else {
-                    $scope.showErrors = false;
-                    $scope.actionMessage = null;
-                    $scope.securityWarning = false;
-                    $scope.user.Username = $scope.user.TempUsername;
-                    $scope.displayLoadingIndicator = true;
-                    if ($scope.user.Type == 'TempCustomer')
-                        $scope.user.ConvertFromTempUser = true;
-
-                    User.save($scope.user,
-                        function (u) {
-                            $scope.securityWarning = false;
-                            $scope.displayLoadingIndicator = false;
-                            $scope.actionMessage = 'Your changes have been saved';
-                            $scope.user.TempUsername = u.Username;
-                            //if (_AnonRouter) _AnonRouter.route();
-                        },
-                        function (ex) {
-                            $scope.displayLoadingIndicator = false;
-                            if (ex.Code.is('PasswordSecurity'))
-                                $scope.securityWarning = true;
-                            else {
-                                $scope.actionMessage = $sce.trustAsHtml(ex.Message);
-                            }
-                        }
-                    );
-                }
-            };
-            $scope.loginExisting = function () {
-                if ($scope.login_existing.$invalid) {
-                    $scope.showErrors = true;
-                    $scope.loginAsExistingError = err.Message;
-                }
-                else {
-                    User.login({
-                        Username: $scope.loginasuser.Username,
-                        Password: $scope.loginasuser.Password,
-                        ID: $scope.user.ID,
-                        Type: $scope.user.Type
-                    }, function (u) {
-                        //if (_AnonRouter) _AnonRouter.route();
-                        if ($scope.currentOrder) {
-                            $location.path('checkout');
-                        }
-                        if (!$scope.currentOrder) {
-                            $location.path('catalog');
-                        }
-                    }, function (err) {
-                        $scope.loginAsExistingError = err.Message;
+                $scope.emailResetLoadingIndicator = true;
+                User.reset($scope.loginasuser, function (user) {
+                        delete $scope.loginasuser;
+                        $location.path('catalog');
+                    },
+                    function (err) {
+                        $scope.emailResetLoadingIndicator = false;
+                        $scope.resetPasswordError = $sce.trustAsHtml(err.Message);
                     });
-                }
+            }
+
+            $scope.save = function () {
+                $scope.actionMessage = null;
+                $scope.securityWarning = false;
+                $scope.user.Username = $scope.user.TempUsername;
+                $scope.displayLoadingIndicator = true;
+                if ($scope.user.Type == 'TempCustomer')
+                    $scope.user.ConvertFromTempUser = true;
+
+                User.save($scope.user,
+                    function (u) {
+                        $scope.securityWarning = false;
+                        $scope.displayLoadingIndicator = false;
+                        $scope.actionMessage = 'Your changes have been saved';
+                        $scope.user.TempUsername = u.Username;
+                        //if (_AnonRouter) _AnonRouter.route();
+                    },
+                    function (ex) {
+                        $scope.displayLoadingIndicator = false;
+                        if (ex.Code.is('PasswordSecurity'))
+                            $scope.securityWarning = true;
+                        else {
+                            $scope.actionMessage = $sce.trustAsHtml(ex.Message);
+                        }
+                    }
+                );
             };
+
+            $scope.loginExisting = function () {
+                User.login({
+                    Username: $scope.loginasuser.Username,
+                    Password: $scope.loginasuser.Password,
+                    ID: $scope.user.ID,
+                    Type: $scope.user.Type
+                }, function (u) {
+                    //if (_AnonRouter) _AnonRouter.route();
+                    if ($scope.currentOrder) {
+                        $location.path('checkout');
+                    }
+                    if (!$scope.currentOrder) {
+                        $location.path('catalog');
+                    }
+                }, function (err) {
+                    $scope.loginAsExistingError = err.Message;
+                });
+            };
+
         });
-    }]);
+    }
+]);

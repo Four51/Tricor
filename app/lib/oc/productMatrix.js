@@ -128,12 +128,11 @@ function ProductMatrixCtrl($scope, $routeParams, $location, ProductDisplayServic
 
         $scope.qtyError = "";
         ProductMatrix.validateQuantity($scope.comboVariants, $scope.product, function (message) {
-            $scope.qtyError = "<p>Please select a valid quantity</p>";
-            //$scope.qtyError = message; //this shows all of the messages for each vboss variant
+            $scope.qtyError = message; //this shows all of the messages for each vboss variant
         });
 
         if ($scope.qtyError) {
-            alert('Please enter a quantity.');
+            //do nothing - error messaging is shown via validateQuantity
         }
 
         else {
@@ -315,7 +314,6 @@ function ProductMatrix($451, Variant) {
         var priceSchedule = product.StandardPriceSchedule;
         var totalQty = 0;
 
-
         angular.forEach(matrix, function (group) {
             angular.forEach(group, function (variant) {
                 var qty = variant.Quantity;
@@ -323,11 +321,10 @@ function ProductMatrix($451, Variant) {
 
                 if (variant.Quantity) {
                     if (!$451.isPositiveInteger(qty)) {
-                    //if (qty == 0 || qty == null || qty == '') {
                         qtyError += "<p>Please select a valid quantity for " + variant.DisplayName[0] + " " + (variant.DisplayName[1] ? variant.DisplayName[1] : "") + "</p>";
                         variant.QtyError = true;
-
                     }
+
                     else {
                         totalQty += +(variant.Quantity);
                     }
@@ -347,6 +344,11 @@ function ProductMatrix($451, Variant) {
                 }
             });
         });
+
+        //show an error if no qty has been entered and therefore qtyChanged() has not been hit
+        if (!totalQty) {
+            qtyError += "<p>Please select a valid quantity.</p>";
+        }
 
         if (!product.RestrictedQuantity && product.MinTotalQty && totalQty < product.MinTotalQty) {
             qtyError += "Total quantity must be equal or greater than " + product.MinTotalQty + " for " + (product.Name ? product.Name : product.ExternalID);
