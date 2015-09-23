@@ -153,6 +153,20 @@
                         <i class="fa fa-lock"></i>
                         <inlineerror ng-show="user_form.confirm_password.$error.match" title="{{('Password' | r) + 's do not match!' | xlat}}" />
                     </div>
+                    <!--TRT-03117 Show Password Requirements-->
+                    <div class="alert" style="background-color:#F5F5F5;">
+                        <strong>Password Requirements</strong>
+                        <ul>
+                            <li>{{'Minimum of 8 alphanumeric characters.' | xlat}}</li>
+                            <li>{{'Two or more of the following kinds of characters' | xlat}}</li>
+                            <ol>
+                                <li>{{'Alphabetic (e.g., a-z, A-Z)' | xlat}}</li>
+                                <li>{{'Numeric (i.e. 0-9)' | xlat}}</li>
+                                <li>{{'Punctuation and other characters (e.g.,' | xlat}} !@#$%^&*()_+|~-=\`{}[]:";'<>?,./)</li>
+                            </ol>
+                        </ul>
+                    </div>
+                    <!--TRT-03117 Show Password Requirements-->
                 </div>
                 <div class="col-sm-6 col-xs-12 view-form-icon">
                     <span class="alert" ng-show="securityWarning">
@@ -176,10 +190,10 @@
                             </ul>
                         </ul>
                     </div>
-                    <!--</span>-->
+                    </span>
                 </div>
             </div>
-            <div class="panel-body" >
+            <div class="panel-body">
                 <div  ng-if="user.CustomFields" class="col-sm-6 view-form-icon">
                     <div ng-repeat="field in user.CustomFields">
                         <customfilefield customfield="field" ng-if="field.ControlType == 'File' && field.DisplayToUser"></customfilefield>
@@ -189,8 +203,11 @@
                 </div>
             </div>
             <div class="panel-footer text-center">
+                <div class="pull-left text-left requirements">
+                    <span class="alert alert-success" ng-show="actionMessage" ng-bind-html="actionMessage | r | xlat"></span>
+                </div>
                 <input class="btn btn-primary pull-right" type="submit" id="451_btn_user" value="{{(user.Type == 'TempCustomer' ? 'Create Account' : 'Save') | xlat}}" />
-                <span class="alert alert-success" ng-show="actionMessage" ng-bind-html="actionMessage | r | xlat"></span>
+                <!--<span class="alert alert-success" ng-show="actionMessage" ng-bind-html="actionMessage | r | xlat"></span>-->
             </div>
         </div>
     </form>
