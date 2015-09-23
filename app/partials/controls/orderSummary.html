@@ -44,7 +44,7 @@
                 <span class="pull-right">{{currentOrder.Coupon.OrderDiscount * -1 | culturecurrency}}</span>
             </p>
             <div ng-show="currentOrder.Coupon">
-                <button type="button"  class="btn btn-danger btn-sm pull-right" ng-click="removeCoupon()">Remove {{'Coupon' | r | xlat}}</button>
+                <button type="button"  class="btn btn-danger btn-sm pull-right" ng-click="removeCoupon()">Remove {{'Promotion' | r | xlat}}</button>
                 <p class="text-left" ng-show="currentOrder.Coupon.ExpirationDate"><small class="text-danger">{{'Expires' | r | xlat}}: {{currentOrder.Coupon.ExpirationDate | date:user.Culture.DateFormat.short}}</small></p>
             </div>
         </div>
