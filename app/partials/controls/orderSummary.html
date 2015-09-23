@@ -32,7 +32,7 @@
                         <div class="input-group">
                             <input class="form-control" type="text" ng-model="currentOrder.CouponCode" placeholder="{{('Promotion' | r) + ' ' + ('Code' | r) | xlat}}" autocomplete="off"/>
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-success" ng-click="applyCoupon()"><!--<i class="fa fa-check"></i>-->Add</button>
+                                <button type="button" class="btn btn-success btn-sm" ng-click="applyCoupon()"><!--<i class="fa fa-check"></i>-->Add</button>
                             </span>
                         </div>
                         <!--<i class="fa fa-question-circle"></i>-->
@@ -40,13 +40,15 @@
                 </div>
             </div>
             <p ng-show="currentOrder.Coupon">
-                <span class="text-info">{{currentOrder.Coupon.Label}}:</span>{{currentOrder.Coupon.OrderDiscount * -1 | culturecurrency}}<br/>
+                <span class="text-info">{{currentOrder.Coupon.Label}}:</span>
+                <span class="pull-right">{{currentOrder.Coupon.OrderDiscount * -1 | culturecurrency}}</span>
             </p>
             <div ng-show="currentOrder.Coupon">
-                <button type="button"  class="btn btn-danger pull-right" ng-click="removeCoupon()">Remove {{'Coupon' | r | xlat}}</button>
+                <button type="button"  class="btn btn-danger btn-sm pull-right" ng-click="removeCoupon()">Remove {{'Coupon' | r | xlat}}</button>
                 <p class="text-left" ng-show="currentOrder.Coupon.ExpirationDate"><small class="text-danger">{{'Expires' | r | xlat}}: {{currentOrder.Coupon.ExpirationDate | date:user.Culture.DateFormat.short}}</small></p>
             </div>
         </div>
+        <br />
         <hr/>
         <h4 ng-if="!(user.Permissions.contains('HidePricing'))">
             <strong>{{'Total' | r | xlat}}</strong>

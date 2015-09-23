@@ -871,6 +871,10 @@ hr {
 }
 /*TRT-01811*/
 
+ordersummary .btn-sm {
+    margin-bottom:10px;
+}
+
 /*checkout*/
 
 /*faq*/
