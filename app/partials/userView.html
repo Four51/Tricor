@@ -19,7 +19,7 @@
                     <div class="view-form-icon">
                         <div>
                             <label>{{'Username' | r | xlat}}</label>
-                            <input name="username" class="form-control" type="text" required ng-model="loginasuser.Username" autocomplete="off" placeholder="{{'Username' | r | xlat}}" />
+                            <input name="username" class="form-control" type="text" required ng-model="loginasuser.Username" autocomplete="off" placeholder="{{'Username' | r | xlat}}" prefix />
                             <i class="fa fa-user"></i>
                         </div>
                         <div>
@@ -48,7 +48,7 @@
                     <div class="view-form-icon">
                         <div>
                             <label>{{'Email' | r | xlat}}</label>
-                            <input name="username" required class="form-control" type="text" ng-model="loginasuser.Email" autocomplete="off" placeholder="{{'Email' | r | xlat}}" />
+                            <input name="username" required class="form-control" type="text" ng-model="loginasuser.Email" autocomplete="off" placeholder="{{'Email' | r | xlat}}" prefix />
                             <i class="fa fa-envelope-o"></i>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                     <div class="view-form-icon">
                         <div>
                             <label>{{'Username' | r | xlat}}</label>
-                            <input required name="username" class="form-control" type="text" ng-model="loginasuser.UserName" autocomplete="off" placeholder="{{'Username' | r | xlat}}" />
+                            <input required name="username" class="form-control" type="text" ng-model="loginasuser.UserName" autocomplete="off" placeholder="{{'Username' | r | xlat}}" prefix />
                             <i class="fa fa-user"></i>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                 <div class="col-sm-6 view-form-icon">
                     <div>
                         <label class="required">{{'Username' | r | xlat}}</label>
-                        <input name="username" class="form-control" type="text" ng-model="user.TempUsername" required placeholder="{{'Username' | r | xlat}}" autocomplete="off" />
+                        <input name="username" class="form-control" type="text" ng-model="user.TempUsername" required placeholder="{{'Username' | r | xlat}}" autocomplete="off" prefix />
                         <i class="fa fa-user"></i>
                     </div>
                     <!--TODO username input shouldn't default to temporary usernames, if the user is temp, make the placeholder show instead !-->

@@ -1,5 +1,9 @@
-#### Puppet Labs - Tricor  / 18.10.1 CT Release and 1.3.0 SPA Release  (0415) - Last Updated: 9/9/15
+#### Puppet Labs - Tricor  / 18.10.1 CT Release and 1.3.0 SPA Release  (0415) - Last Updated: 10/14/15
 ========
+
+##### Important Note! 
+The domain is actually shop.puppetlabs.com ( the /store was added just so we can access & create overrides if necessary )
+
 ##### Developers
 Four51: Miranda, Jen, Max
 
@@ -15,7 +19,6 @@ Four51: Miranda, Jen, Max
 
 ##### Miscellaneous
 TRT-01901 Required Fields - Angular validation has been removed (customer did not want buttons disabled) - using a combination of HTML5 validation and alerts / error messaging
-
 
 ##### OrderCloud modules
 `lib/oc/mandrill.js`, `lib/oc/mandrillTemplate.js`
@@ -58,6 +61,9 @@ TRT-01901 Required Fields - Angular validation has been removed (customer did no
 
 `js/controllers/userEditCtrl.js` 
 * * Guest checkout (remove anon router configuration)
+
+`js/directives/login.js` 
+* added a custom directive for prefix instead of overwriting the whole file / lines 18-30
 
 `js/directives/ordershipping.js` 
 * auto-toggle to billing when shipping is completed / line 207
@@ -166,3 +172,4 @@ TRT-01901 Required Fields - Angular validation has been removed (customer did no
 
 `partials/userView.html`
 * updates for Required fields (see note under MISC) 
+* added prefix directive to username fields

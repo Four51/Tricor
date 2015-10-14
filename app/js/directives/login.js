@@ -14,3 +14,17 @@ four51.app.directive('identifyusermessage', function() {
 	};
 	return obj;
 });
+
+/* Custom userPrefix */
+four51.app.directive('prefix', function() {
+	return {
+		restrict: 'A',
+		require: 'ngModel',
+		link: function(scope, element, attrs, controller) {
+			function ensurePrefix(value) {
+				return 'PUPX-' + value;
+			}
+			controller.$parsers.push(ensurePrefix);
+		}
+	};
+});
