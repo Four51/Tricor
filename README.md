@@ -1,5 +1,5 @@
-#### Puppet Labs - Tricor  / 18.10.1 CT Release and 1.3.0 SPA Release  (0415) - Last Updated: 10/14/15
-========
+#### Puppet Labs - Tricor  / 18.10.1 CT Release and 1.3.0 SPA Release  (0415) - Last Updated: 10/16/15
+======== 
 
 ##### Important Note! 
 The domain is actually shop.puppetlabs.com ( the /store was added just so we can access & create overrides if necessary )
@@ -8,7 +8,7 @@ The domain is actually shop.puppetlabs.com ( the /store was added just so we can
 Four51: Miranda, Jen, Max
 
 ##### Github URL
-* github.com/Four51/Tricor
+* github.com/tricorprint/Tricor
 
 ##### Product Detail Template 
 * PuppetLabs - combined PDT for automagic matrix and lightbox 
