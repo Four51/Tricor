@@ -1,47 +1,26 @@
-<header class="header navbar navbar-inner hidden-xs">
-    <nav class="navbar navbar-default" role="navigation" headroom>
+<header class="header navbar navbar-inner hidden-xs hidden-sm">
+    <nav class="navbar navbar-default" style="border-bottom: 3px solid #2f2f2e;" role="navigation" headroom>
         <section>
             <div class="container">
-                <ul class="nav navbar-nav pull-right">
+                <ul class="nav navbar-nav pull-left">
+                    <li style="padding-left:370px;">
+                        <a id="451qa_order_link" href="//puppetlabs.com" target="_blank">
+                            <span>{{'Home' | r | xlat}}</span>
+                        </a>
+                    </li>
                     <li>
-                        <a id="451qa_order_link" href="//puppetlabs.com/about" target="_blank">
-                            <span>{{'About Us' | r | xlat}}</span>
+                        <a id="451qa_order_link" href="https://forge.puppetlabs.com" target="_blank">
+                            <span>{{'Forge' | r | xlat}}</span>
                         </a>
                     </li>
-                    <li ng-class="{'active': isActive(['contact'])}">
-                        <a id="451qa_order_link" href="contact">
-                            <span>{{'Contact Us' | r | xlat}}</span>
+                    <li>
+                        <a id="451qa_order_link" href="//docs.puppetlabs.com" target="_blank">
+                            <span>{{'Docs' | r | xlat}}</span>
                         </a>
                     </li>
-                    <li ng-class="{'active': isActive(['FAQ'])}">
-                        <a id="451qa_order_link" href="FAQ">
-                            <span>{{'FAQ' | r | xlat}}</span>
-                        </a>
-                    </li>
-                    <li class="report" ng-if="user.Type == 'Customer' && user.Permissions.contains('AdvancedReporting')" ng-class="{'active': isActive('reports')}">
-                        <a id="451qa_order_link" href="reports">
-                            <span>{{'Reports' | r | xlat}}</span>
-                        </a>
-                    </li>
-                    <li ng-class="{'active': isActive(['admin', 'addresses', 'address', 'messages', 'message', 'favoriteorders'])}">
-                        <a id="451qa_acct_link" href="admin">
-                            <span>{{'My Account' | r | xlat}}</span>
-                        </a>
-                    </li>
-                    <li class="logout" ng-if="user.Type =='Customer'">
-                        <a href="#"  class="451_btn_logout" ng-click="Logout()">
-                            <span>{{'Logout' | r | xlat}}</span>
-                        </a>
-                    </li>
-                    <li ng-if="user.Type !='Customer'" ng-class="{'active': isActive('admin')}">
-                        <a href="admin" class="451_btn_logout">
-                            <span>{{'Login' | r | xlat}}</span>
-                        </a>
-                    </li>
-                    <li class="cart" ng-class="{'active': isActive(['cart', 'checkout'])}">
-                        <a id="451qa_cart_link" ng-show="cartCount && user.CurrentOrderID" class="cart" href="cart">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>{{'View Cart' | r | xlat}}</span>
+                    <li>
+                        <a id="451qa_order_link" href="https://learn.puppetlabs.com" target="_blank">
+                            <span>{{'Learn' | r | xlat}}</span>
                         </a>
                     </li>
                 </ul>

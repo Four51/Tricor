@@ -14,3 +14,35 @@
         <productlistview></productlistview>
     </div>
 </section>
+<section class="vintagemsg" id="vintagemsg" style="display:none;">
+    <div class="col-md-9 col-md-offset-2">
+        <h3 class="vintageH3">Don't forget to check out our "Vintage" Puppet Gear</h3>
+        <h3><a href="/store/catalog/Vintage">Get it while it lasts!</a></h3>
+    </div>
+    <script type="text/javascript">
+    	// SHOW VINTAGE MESSAGE
+	function vintagemsg() {
+	    var allproducturl = 'https://tricor.four51ordercloud.com/EXTEST/catalog/AllProducts';
+        var myurl = window.location;
+	    
+	    if(allproducturl == myurl) {
+	        document.getElementById("vintagemsg").style.display = 'block';
+        }
+        else{
+        }
+	}
+	window.setTimeout(vintagemsg, 300);
+	
+	
+	
+	function togglecat($scope) {
+
+	    $scope.visible = true;
+	    
+	    $scope.toggle = function() {
+	        $scope.visible = !scope.visible;
+	    };
+
+	}
+    </script>
+</section>
